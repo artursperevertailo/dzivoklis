@@ -5448,3 +5448,136 @@ p {
     margin-top: 25px;
   }
 }
+
+/* Hide info section on desktop by default */
+.info-section {
+  display: none;
+}
+
+/* Show info section only on mobile devices */
+@media (max-width: 480px) {
+  .info-section {
+    display: block !important;
+    order: 3;
+    margin: 20px 16px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  .info-container {
+    text-align: left;
+  }
+  
+  .info-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+  }
+  
+  .info-content {
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .info-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .info-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+  
+  /* Hide dropdown on mobile */
+  .dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Hide menu button on mobile */
+  .menu-btn {
+    display: none !important;
+  }
+  
+  /* Ensure proper content flow on mobile */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid-content {
+    order: 1;
+    margin-bottom: 20px;
+    padding: 20px 16px;
+  }
+  
+  .grid-container {
+    order: 2;
+    margin-bottom: 20px;
+    padding: 20px 16px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .info-section {
+    order: 3;
+  }
+}
+
+/* Desktop: show dropdown, hide info section */
+@media (min-width: 769px) {
+  .info-section {
+    display: none !important;
+  }
+  
+  .dropdown {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .menu-btn {
+    display: flex;
+  }
+}
+
+/* Tablet: hide info section, show dropdown */
+@media (min-width: 481px) and (max-width: 768px) {
+  .info-section {
+    display: none !important;
+  }
+  
+  .dropdown {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .menu-btn {
+    display: flex;
+  }
+}
