@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Pārdodas dzīvoklis Āgenskalnā - Conscious Creator</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/apartment-gallery.css"/>
+</head>
+<body>
+  <div class="all-content" id="all-content">
+    <nav class="navigation" id="navigation">
+      <div class="navigation__container">
+        <div class="navigation__logo">
+          Dzīvoklis Āgenskalnā
+          <div class="logo-ornament">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#E9692C" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+              <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/>
+            </svg>
+          </div>
+        </div>
+        <div class="navigation__center">
+          <div class="navigation__menu">
+            <a href="#" class="nav-link">MAKSĀJUMI</a>
+            <a href="#" class="nav-link">PAPILDUS INFORMĀCIJA</a>
+            <button class="menu-btn" id="menu-btn">
+          <span class="menu-text">ATVĒRT</span>
+          <div class="circle-pulse">
+            <div class="circle"></div>
+            <div class="ring"></div>
+            <div class="wave"></div>
+            <div class="particles">
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+            </div>
+          </div>
+        </button>
+          </div>
+        </div>
+        <div class="navigation__right">
+          <a href="#" class="contact-link" id="contact-link">Sazināties</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content" id="content">
+      <div class="grid-container">
+        <div class="grid-item grid-content">
+          <h1><span class="highlight-text">Pārdodas dzīvoklis</span> <span class="highlight-text-black">ar īpašu stāstu</span></h1>
+          <p>Vai esi kādreiz sapņojis dzīvot mājā, kuru pamana katrs, kas iegriežas Meža ielā? Ēka ar romantisko "Romeo un Džuljetas" balkoniņu ir viena no skaistākajām pirmskara mūra celtnēm, kas piešķir šai vietai īpašu šarmu.</p>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/ēka.PNG" alt="Ēka" class="grid-image" data-index="0">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/ēka2.PNG" alt="Ēka divi" class="grid-image" data-index="1">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/virtuve3.PNG" alt="Virtuve trīs" class="grid-image" data-index="2">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/virtuve.PNG" alt="Virtuve" class="grid-image" data-index="3">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/virtuve2.PNG" alt="Virtuve divi" class="grid-image" data-index="4">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/guļamistaba.PNG" alt="Guļamistaba" class="grid-image" data-index="5">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/guļamistaba2.PNG" alt="Guļamistaba divi" class="grid-image" data-index="6">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/viesistaba.PNG" alt="Viesistaba" class="grid-image" data-index="7">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/koridors.PNG" alt="Koridors" class="grid-image" data-index="8">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/koridors2.PNG" alt="Koridors divi" class="grid-image" data-index="9">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/tualete.PNG" alt="Tualete" class="grid-image" data-index="10">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper">
+            <img src="./images/plānojums.jpg" alt="Plānojums" class="grid-image" data-index="11">
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item__wrapper price-wrapper">
+            <div class="price-content">
+              <h3 class="price-title">Pārdošanas Cena</h3>
+              <div class="price-amount">
+                <span class="price-currency">€</span>
+                <span class="price-value">100,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Maksājumi Section -->
+  <div class="maksajumi-section" id="maksajumi-section" style="display: none;">
+    <div class="maksajumi-container">
+      <h2 class="maksajumi-title">Maksājumi</h2>
+      
+      <div class="maksajumi-password-protection">
+        <p class="maksajumi-password-text">Lai apskatītu rēķinus, ievadiet paroli:</p>
+        <div class="maksajumi-password-input-container">
+          <input type="password" id="maksajumi-payment-password" class="maksajumi-password-input" placeholder="Ievadiet paroli">
+          <button id="maksajumi-password-submit" class="maksajumi-password-submit">ATVĒRT</button>
+        </div>
+        <div id="maksajumi-password-error" class="maksajumi-password-error" style="display: none;">
+          Nepareiza parole! Mēģiniet vēlreiz.
+        </div>
+      </div>
+      
+      <div id="maksajumi-payments-content" class="maksajumi-payments-content" style="display: none;">
+        <div class="maksajumi-payments-info">
+          <h4>Mēneša maksājumi:</h4>
+          <div class="maksajumi-payment-item">
+            <span class="maksajumi-payment-label">Zemes noma:</span>
+            <span class="maksajumi-payment-amount">€10</span>
+          </div>
+          <div class="maksajumi-payment-item">
+            <span class="maksajumi-payment-label">Gāze:</span>
+            <span class="maksajumi-payment-amount">€200 ziema/€70 vasara</span>
+          </div>
+          <div class="maksajumi-payment-item">
+            <span class="maksajumi-payment-label">Apsaimniekošana:</span>
+            <span class="maksajumi-payment-amount">€65</span>
+          </div>
+          <div class="maksajumi-payment-item">
+            <span class="maksajumi-payment-label">Elektrība:</span>
+            <span class="maksajumi-payment-amount">€35.00</span>
+          </div>
+          <div class="maksajumi-payment-item total">
+            <span class="maksajumi-payment-label">Kopā:</span>
+            <span class="maksajumi-payment-amount">€310 ziema / €180 vasara</span>
+          </div>
+        </div>
+        
+        <div class="maksajumi-bills-gallery">
+          <h4>Rēķinu attēli:</h4>
+          <div class="maksajumi-bills-grid">
+            <div class="maksajumi-bill-item" data-bill="zeme">
+              <img src="./images/bills/IMG_5766.JPG" alt="Zemes nomas rēķins" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="gaze">
+              <img src="./images/bills/IMG_5767.JPG" alt="Gāzes rēķins" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="apsaimniekosana">
+              <img src="./images/bills/IMG_5768.JPG" alt="Apsaimniekošanas rēķins" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="elektriba">
+              <img src="./images/bills/IMG_5769.JPG" alt="Elektrības rēķins" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="elektriba2">
+              <img src="./images/bills/IMG_5770.JPG" alt="Elektrības rēķins 2" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="gaze2">
+              <img src="./images/bills/IMG_5771.JPG" alt="Gāzes rēķins 2" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="apsaimniekosana2">
+              <img src="./images/bills/IMG_5772.JPG" alt="Apsaimniekošanas rēķins 2" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="zeme2">
+              <img src="./images/bills/IMG_5773.JPG" alt="Zemes nomas rēķins 2" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="elektriba3">
+              <img src="./images/bills/IMG_5774.JPG" alt="Elektrības rēķins 3" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="gaze3">
+              <img src="./images/bills/IMG_5775.JPG" alt="Gāzes rēķins 3" class="maksajumi-bill-image">
+            </div>
+            <div class="maksajumi-bill-item" data-bill="apsaimniekosana3">
+              <img src="./images/bills/IMG_5776.JPG" alt="Apsaimniekošanas rēķins 3" class="maksajumi-bill-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Papildus Informācija Section -->
+  <div class="papildus-section" id="papildus-section" style="display: none;">
+    <div class="papildus-container">
+      <h2 class="papildus-title">Papildus informācija</h2>
+      
+      <div class="papildus-password-protection">
+        <p class="papildus-password-text">Lai apskatītu papildus informāciju, ievadiet paroli:</p>
+        <div class="papildus-password-input-container">
+          <input type="password" id="papildus-payment-password" class="papildus-password-input" placeholder="Ievadiet paroli">
+          <button id="papildus-password-submit" class="papildus-password-submit">ATVĒRT</button>
+        </div>
+        <div id="papildus-password-error" class="papildus-password-error" style="display: none;">
+          Nepareiza parole! Mēģiniet vēlreiz.
+        </div>
+      </div>
+      
+      <div id="papildus-content" class="papildus-content" style="display: none;">
+        <!-- PDF Documents Section -->
+        <div class="papildus-info-section">
+          <h4>Dokumenti</h4>
+          <div class="pdf-documents">
+            <p class="pdf-intro">Šeit var apskatīt svarīgos dokumentus par dzīvokli:</p>
+            
+            <div class="pdf-grid">
+              <div class="pdf-item" data-pdf="zeme-noma">
+                <div class="pdf-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#E9692C" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+                  </svg>
+                </div>
+                <div class="pdf-info">
+                  <h5>Zemes Noma</h5>
+                  <p>Zemes nomas līgums</p>
+                </div>
+              </div>
+              
+              <div class="pdf-item" data-pdf="meza-iela-plans">
+                <div class="pdf-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#E9692C" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+                  </svg>
+                </div>
+                <div class="pdf-info">
+                  <h5>Meža Iela Plāns</h5>
+                  <p>Ēkas plāns un izkārtojums</p>
+                </div>
+              </div>
+              
+              <div class="pdf-item" data-pdf="atskaite-2009-2025">
+                <div class="pdf-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#E9692C" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+                  </svg>
+                </div>
+                <div class="pdf-info">
+                  <h5>Atskaite 2009-2025</h5>
+                  <p>Paveikto darbu atskaite</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close" id="lightbox-close">&times;</span>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="">
+      <button class="lightbox-nav prev" id="lightbox-prev">‹</button>
+      <button class="lightbox-nav next" id="lightbox-next">›</button>
+    </div>
+  </div>
+
+  <!-- Sazināties Section -->
+  <div class="contact-section" id="contact-section" style="display: none;">
+    <div class="contact-container">
+      <h2 class="contact-title">Sazināties</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#E9692C" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>E-pasts</h4>
+              <a href="mailto:martakmajore@gmail.com" class="contact-link-email">martakmajore@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#E9692C" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Tālrunis</h4>
+              <a href="tel:+37126531123" class="contact-link-phone">+371 26 531 123</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-message">
+          <p>Jautājumi par dzīvokli? Sazinieties ar mums!</p>
+          <p>Mēs atbildēsim jums pēc iespējas ātrāk.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown" id="dropdown">
+    <div class="dropdown__content">
+      <button class="dropdown__close" id="dropdown-close">&times;</button>
+      
+          <!-- Dzīvokļa Apraksts Section -->
+          <div class="dropdown__section">
+            <h3 class="dropdown__title">Dzīvokļa Apraksts</h3>
+            <div class="dropdown__description">
+              <h4 class="dropdown__main-title">Dzīvoklis ar īpašu stāstu un iespējām - Āgenskalnā, Meža ielā</h4>
+              
+              <p class="dropdown__story">
+                Vai esi kādreiz sapņojis dzīvot mājā, kuru pamana katrs, kas iegriežas Meža ielā? Ēka ar romantisko "Romeo un Džuljetas" balkoniņu ir viena no skaistākajām pirmskara mūra celtnēm, kas piešķir šai vietai īpašu šarmu.
+              </p>
+              
+              <p class="dropdown__story">
+                Dzīvoklis ir lolots ģimenes īpašums daudzu gadu garumā, kas nu var kļūt par Tavu sapņa piepildījumu. Dzīvoklis atrodas <strong>2. stāvā</strong>, kopējā platība – <strong>60,1 m²</strong>, un tas apvieno vēsturisku auru ar iespēju radīt mūsdienīgu interjeru tieši pēc savas gaumes.
+              </p>
+              
+              <p class="dropdown__story">
+                Logi vērsti uz klusu pagalmu, tāpēc šeit vienmēr būs miers kā dienā, tā naktī. Šī vieta būs piemērota cilvēkiem, kas alkst pēc vidusceļa pilsētas dzīvei savienojumā ar Latvijas dabas mieru.
+              </p>
+            </div>
+          </div>
+
+          <!-- Plānojums Section -->
+          <div class="dropdown__section">
+            <h3 class="dropdown__title">Plānojums</h3>
+            <div class="dropdown__plan">
+              <div class="dropdown__plan-item">• <strong>Koridors</strong> – 3,7 m²</div>
+              <div class="dropdown__plan-item">• <strong>Vannas istaba</strong> ar plašu stikla dušu divu sienu platumā – 2,7 m²</div>
+              <div class="dropdown__plan-item">• <strong>Virtuve</strong> apvienota ar viesistabu – 27,7 m² (dzīvojamā zona + virtuve)</div>
+              <div class="dropdown__plan-item">• <strong>Guļamistaba</strong> – 29 m² (iespēja sadalīt zonās – guļamzona un darba zona)</div>
+              <div class="dropdown__plan-item">• <strong>Kambaris</strong> virtuves zonā ar gāzes katlu – 1,2 m²</div>
+            </div>
+          </div>
+
+          <!-- Priekšrocības Section -->
+          <div class="dropdown__section">
+            <h3 class="dropdown__title">Priekšrocības</h3>
+            <div class="dropdown__advantages">
+              <div class="dropdown__advantage-item">• <strong>Autonoma gāzes apkure</strong></div>
+              <div class="dropdown__advantage-item">• <strong>Logi uz klusu pagalmu</strong> – miers un privātums</div>
+              <div class="dropdown__advantage-item">• <strong>Pieejama velonovietne</strong></div>
+              <div class="dropdown__advantage-item">• <strong>Draudzīgi kaimiņi</strong> un laba mājas kopiena</div>
+              <div class="dropdown__advantage-item">• <strong>Dzīvoklis tiek pārdots bez mēbelēm</strong>, ar iespēju par tām vienoties</div>
+              <div class="dropdown__advantage-item">• <strong>Bez maksas auto novietošana</strong> meža ielā</div>
+              <div class="dropdown__advantage-item">• <strong>Pieeja dūmvadam</strong> ar iespēju pievienot kamīnu vai krāsni</div>
+            </div>
+          </div>
+
+          
+
+          <!-- Vieta Section -->
+          <div class="dropdown__section">
+            <h3 class="dropdown__title">Vieta</h3>
+            <div class="dropdown__location">
+              <p class="dropdown__location-text">
+                <strong>Āgenskalna sirds</strong> – tikai 2 pieturas līdz Rīgas centram, pāris soļi līdz tirgum, kafejnīcām, vairākiem parkiem un augstskolām. Katrs rīts kā svētdiena, kurā tevi sagaidīs kafijas aromāts no ielas terasēm un iespēja iesākt savu dienu miera oāzē.
+              </p>
+              <div class="dropdown__map">
+                <div class="map-container">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2175.5!2d24.0788549!3d56.9441287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eed021f3a403eb%3A0x64a4d724ddaf6a1c!2sMe%C5%BEa%20iela%206A%2C%20Zemgales%20priek%C5%A1pils%C4%93ta%2C%20R%C4%ABga%2C%20LV-1048!5e0!3m2!1sen!2slv!4v1234567890"
+                    width="100%" 
+                    height="250" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Meža iela 6A, Āgenskalns, Rīga">
+                  </iframe>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <script src="./js/apartment-gallery.js"></script>
+</body>
+</html>
