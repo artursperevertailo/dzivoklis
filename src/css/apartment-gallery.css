@@ -4940,3 +4940,145 @@ p {
     gap: var(--gutter);
   }
 }
+
+/* Fix dropdown visibility on mobile - remove display: none and ensure proper functionality */
+@media (max-width: 480px) {
+  /* Show dropdown on mobile instead of hiding it */
+  .dropdown {
+    display: block !important;
+    position: relative;
+    z-index: 100;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(233, 105, 44, 0.2);
+    max-height: none;
+    overflow: visible;
+  }
+  
+  /* Ensure dropdown content is visible */
+  .dropdown__content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    max-height: none;
+    overflow: visible;
+    padding: 20px;
+  }
+  
+  /* Style dropdown elements for mobile */
+  .dropdown__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .dropdown__story {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  .dropdown__plan-item,
+  .dropdown__advantage-item,
+  .dropdown__location-text {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Ensure dropdown is properly positioned */
+  .dropdown.open {
+    display: block !important;
+  }
+  
+  .dropdown:not(.open) {
+    display: none;
+  }
+  
+  /* Add smooth transitions */
+  .dropdown {
+    transition: all 0.3s ease;
+  }
+  
+  .dropdown__content {
+    transition: opacity 0.3s ease;
+  }
+}
+
+/* Additional dropdown functionality fixes for mobile */
+@media (max-width: 480px) {
+  /* Ensure dropdown can be toggled properly */
+  .dropdown {
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+  
+  /* When dropdown is open */
+  .dropdown.open {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* When dropdown is closed */
+  .dropdown:not(.open) {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* Ensure proper spacing when dropdown is open */
+  .all-content.menu-open .dropdown {
+    margin-bottom: 30px;
+  }
+  
+  /* Style the dropdown button properly */
+  .menu-btn {
+    background: white;
+    border: 1px solid rgba(233, 105, 44, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+  }
+  
+  .menu-btn:hover {
+    background: rgba(233, 105, 44, 0.1);
+  }
+  
+  /* Ensure dropdown content is properly styled */
+  .dropdown__content {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  /* Add visual feedback for dropdown state */
+  .dropdown.open {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    border-color: rgba(233, 105, 44, 0.4);
+  }
+  
+  /* Ensure proper z-index hierarchy */
+  .dropdown {
+    z-index: 1000;
+  }
+  
+  .dropdown__content {
+    z-index: 1001;
+  }
+}
