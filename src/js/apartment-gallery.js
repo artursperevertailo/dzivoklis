@@ -810,8 +810,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Contact Section Functionality
   function openContactSection() {
-    // Hide all other sections first
-    if (allContent) allContent.style.display = 'none';
+    // Don't hide all content - just show contact section
+    // if (allContent) allContent.style.display = 'none';
     if (dropdown) dropdown.style.display = 'none';
     if (maksajumiSection) maksajumiSection.style.display = 'none';
     if (papildusSection) papildusSection.style.display = 'none';
@@ -842,8 +842,8 @@ document.addEventListener('DOMContentLoaded', function() {
       ease: "easeOutFast",
       onComplete: () => {
         contactSection.style.display = 'none';
-        // Show main content again
-        if (allContent) allContent.style.display = 'block';
+        // Don't restore allContent - it was causing the page to disappear
+        // if (allContent) allContent.style.display = 'block';
       }
     });
     
@@ -858,7 +858,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Close contact section when clicking outside
+  // Contact close button handler
+  const contactCloseBtn = document.getElementById('contact-close');
+  if (contactCloseBtn) {
+    contactCloseBtn.addEventListener('click', () => {
+      closeContactSection();
+    });
+  }
+
+  // Close contact section when clicking outside - COMMENTED OUT FOR TESTING
+  /*
   if (contactSection) {
     contactSection.addEventListener('click', (e) => {
       if (e.target === contactSection) {
@@ -866,13 +875,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+  */
 
-  // Close contact section with Escape key
+  // Close contact section with Escape key - COMMENTED OUT FOR TESTING
+  /*
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && contactSection.style.display === 'flex') {
       closeContactSection();
     }
   });
+  */
 
   console.log('Contact section functionality initialized');
 });
