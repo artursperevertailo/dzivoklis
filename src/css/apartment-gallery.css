@@ -5187,3 +5187,180 @@ p {
     background: white;
   }
 }
+
+/* Mobile solution: hide dropdown, show info section below images */
+@media (max-width: 480px) {
+  /* Completely hide dropdown on mobile */
+  .dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Hide menu button on mobile since dropdown is not needed */
+  .menu-btn {
+    display: none !important;
+  }
+  
+  /* Create new info section below images */
+  .info-section {
+    display: block !important;
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+    order: 3; /* After images */
+  }
+  
+  .info-container {
+    text-align: left;
+  }
+  
+  .info-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+  }
+  
+  .info-content {
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .info-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .info-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+  
+  /* Ensure proper content flow: text -> images -> info section */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid-content {
+    order: 1;
+    margin-bottom: 20px;
+  }
+  
+  .grid-container {
+    order: 2;
+    margin-bottom: 20px;
+  }
+  
+  .info-section {
+    order: 3;
+  }
+  
+  /* Sections styling */
+  .maksajumi-section,
+  .papildus-section,
+  .contact-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+}
+
+/* Tablet and desktop info section styling */
+@media (min-width: 481px) {
+  /* Show info section on larger devices */
+  .info-section {
+    display: block;
+    margin-top: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  .info-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 15px;
+  }
+  
+  .info-content p {
+    font-size: 16px;
+    margin-bottom: 18px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 25px;
+  }
+  
+  .info-content li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+}
+
+/* Desktop specific info section */
+@media (min-width: 769px) {
+  .info-section {
+    margin-top: 50px;
+    padding: 40px;
+  }
+  
+  .info-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+  
+  .info-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .info-content h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+  
+  .info-content li {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+}
