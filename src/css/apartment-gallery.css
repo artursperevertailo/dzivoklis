@@ -3978,3 +3978,221 @@ p {
     z-index: 1;
   }
 }
+
+/* Fix mobile layout: text above images, replace dropdown with separate section */
+@media (max-width: 480px) {
+  /* Ensure main text is above images */
+  .grid-content {
+    order: 1;
+    margin-top: 0;
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .grid-content h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  .grid-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Images below text */
+  .grid-container {
+    order: 2;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Hide dropdown on mobile - replace with separate section */
+  .dropdown {
+    display: none !important;
+  }
+  
+  /* Create new info section similar to contact section */
+  .info-section {
+    order: 3;
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  .info-container {
+    text-align: center;
+  }
+  
+  .info-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .info-content {
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .info-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
+  .info-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+  
+  /* Ensure proper spacing for all sections */
+  .maksajumi-section,
+  .papildus-section,
+  .contact-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  /* Fix navigation to not interfere with content */
+  .navigation {
+    position: relative;
+    background: var(--color-background);
+    border-bottom: 2px solid rgba(233, 105, 44, 0.3);
+    z-index: 1000;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .all-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+/* Tablet layout fixes */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Ensure main text is above images on tablets too */
+  .grid-content {
+    order: 1;
+    margin-top: 0;
+    padding-top: 25px;
+    margin-bottom: 35px;
+  }
+  
+  .grid-content h1 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  .grid-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Images below text */
+  .grid-container {
+    order: 2;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Hide dropdown on tablets too */
+  .dropdown {
+    display: none !important;
+  }
+  
+  /* Info section styling for tablets */
+  .info-section {
+    order: 3;
+    margin-top: 35px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  .info-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .info-content p {
+    font-size: 15px;
+    margin-bottom: 18px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
+  .info-content li {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+  
+  /* Navigation fixes for tablets */
+  .navigation {
+    position: relative;
+    background: var(--color-background);
+    border-bottom: 2px solid rgba(233, 105, 44, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .all-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Ensure proper spacing for all sections on tablets */
+  .maksajumi-section,
+  .papildus-section,
+  .contact-section {
+    margin-top: 35px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+}
