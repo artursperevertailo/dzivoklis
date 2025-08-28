@@ -3585,3 +3585,195 @@ p {
     padding: 10px 18px;
   }
 }
+
+/* Fix dropdown positioning and navigation overlap on mobile */
+@media (max-width: 480px) {
+  /* Ensure navigation is at the very top and doesn't overlap content */
+  .navigation {
+    position: relative;
+    background: var(--color-background);
+    border-bottom: 1px solid rgba(233, 105, 44, 0.2);
+    margin-bottom: 0;
+  }
+  
+  .navigation__container {
+    position: relative;
+    background: var(--color-background);
+    padding: 15px;
+    margin-bottom: 0;
+    z-index: 1000;
+  }
+  
+  /* Position dropdown above images */
+  .dropdown {
+    position: relative;
+    z-index: 999;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    order: -1; /* Move dropdown to top */
+  }
+  
+  /* Ensure main content starts after navigation */
+  .main-content {
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .grid-content {
+    margin-top: 0;
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Remove any body padding */
+  body {
+    padding-top: 0;
+  }
+  
+  /* Ensure proper content flow */
+  .all-content {
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Make sure images are below dropdown */
+  .grid-container {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Ensure navigation elements are properly ordered */
+  .navigation__center {
+    order: 1;
+    margin-bottom: 20px;
+  }
+  
+  .dropdown {
+    order: 2;
+    margin-bottom: 30px;
+  }
+  
+  .grid-content {
+    order: 3;
+  }
+  
+  /* Fix any remaining spacing issues */
+  .grid-item {
+    margin-bottom: 20px;
+  }
+  
+  .price-wrapper {
+    margin-top: 20px;
+  }
+  
+  /* Ensure sections are properly spaced */
+  .maksajumi-section,
+  .papildus-section,
+  .contact-section {
+    margin-top: 40px;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Complete layout separation and order fix for mobile */
+@media (max-width: 480px) {
+  /* Force proper layout order and prevent overlap */
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--color-background);
+    border-bottom: 2px solid rgba(233, 105, 44, 0.3);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Ensure navigation elements are in correct order */
+  .navigation__logo {
+    order: 1;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .navigation__center {
+    order: 2;
+    margin-bottom: 25px;
+  }
+  
+  .navigation__right {
+    order: 3;
+    margin-bottom: 20px;
+  }
+  
+  /* Position dropdown immediately after navigation */
+  .dropdown {
+    order: 4;
+    margin-top: 0;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  /* Ensure main content is completely separate */
+  .main-content {
+    order: 5;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 2px solid rgba(233, 105, 44, 0.1);
+    padding-top: 30px;
+  }
+  
+  .grid-content {
+    order: 6;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Force proper spacing between all elements */
+  .all-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  /* Ensure images start after dropdown with proper spacing */
+  .grid-container {
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+  
+  /* Add visual separation between sections */
+  .maksajumi-section,
+  .papildus-section,
+  .contact-section {
+    margin-top: 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  /* Ensure proper text visibility */
+  .grid-content h1 {
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
+  
+  .grid-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+}
