@@ -18,6 +18,43 @@
   --font-size-small: 16px;
   --nav-height: 60px;
   --border-radius: 4px; /* Consistent border radius */
+  
+  /* Responsive breakpoints */
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --large-desktop: 1200px;
+}
+
+/* Base responsive typography */
+@media (max-width: 480px) {
+  :root {
+    --font-size-large: 32px;
+    --font-size-medium: 16px;
+    --font-size-small: 14px;
+    --margin: 16px;
+    --gutter: 12px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --font-size-large: 42px;
+    --font-size-medium: 17px;
+    --font-size-small: 15px;
+    --margin: 24px;
+    --gutter: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --font-size-large: 52px;
+    --font-size-medium: 18px;
+    --font-size-small: 16px;
+    --margin: 28px;
+    --gutter: 16px;
+  }
 }
 
 * {
@@ -231,6 +268,45 @@ p {
   overflow: hidden; /* Ensure content respects the border radius */
 }
 
+/* Responsive Content */
+@media (max-width: 480px) {
+  .all-content {
+    padding: 0;
+  }
+  
+  .main-content {
+    padding: 20px 16px;
+  }
+  
+  .grid-content {
+    padding: 20px 16px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .all-content {
+    padding: 0;
+  }
+  
+  .main-content {
+    padding: 30px 24px;
+  }
+  
+  .grid-content {
+    padding: 30px 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    padding: 40px 32px;
+  }
+  
+  .grid-content {
+    padding: 40px 32px;
+  }
+}
+
 /* Add a class for when the menu is open to apply border radius */
 .all-content.menu-open {
   border-radius: var(--border-radius);
@@ -246,6 +322,64 @@ p {
   padding: var(--gutter) var(--margin);
   height: var(--nav-height);
   transition: margin 0.3s ease;
+}
+
+/* Responsive Navigation */
+@media (max-width: 480px) {
+  .navigation {
+    padding: 12px 16px;
+    height: 50px;
+  }
+  
+  .navigation__logo {
+    font-size: 18px;
+  }
+  
+  .navigation__center,
+  .navigation__right {
+    display: none;
+  }
+  
+  .menu-btn {
+    display: block;
+    font-size: 20px;
+    padding: 6px 10px;
+    min-height: 32px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation {
+    padding: 16px 20px;
+    height: 55px;
+  }
+  
+  .navigation__logo {
+    font-size: 20px;
+  }
+  
+  .navigation__center {
+    display: none;
+  }
+  
+  .navigation__right {
+    flex: 0 0 auto;
+  }
+  
+  .menu-btn {
+    display: block;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navigation {
+    padding: 20px 24px;
+  }
+  
+  .navigation__logo {
+    font-size: 22px;
+  }
 }
 
 .navigation__container {
@@ -890,6 +1024,66 @@ p {
 }
 
 /* Responsive adjustments */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 16px;
+  }
+  
+  .grid-item {
+    min-height: 200px;
+  }
+  
+  .dropdown {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .dropdown__content {
+    padding: 40px 20px 30px 20px;
+  }
+  
+  .dropdown__title {
+    font-size: 1.4rem;
+  }
+  
+  .dropdown__story,
+  .dropdown__plan-item,
+  .dropdown__advantage-item,
+  .dropdown__location-text {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px 24px;
+  }
+  
+  .grid-item {
+    min-height: 220px;
+  }
+  
+  .dropdown {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .dropdown__content {
+    padding: 50px 30px 40px 30px;
+  }
+  
+  .dropdown__title {
+    font-size: 1.6rem;
+  }
+}
+
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;
@@ -933,7 +1127,6 @@ p {
     display: block;
     font-size: 24px;
   }
-
 }
 
 /* New dropdown description styles */
@@ -1211,6 +1404,44 @@ p {
   gap: 20px;
 }
 
+/* Responsive Grid Layout */
+@media (max-width: 480px) {
+  .bills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .bill-item {
+    padding: 12px;
+  }
+  
+  .bill-image {
+    height: 100px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .bills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  
+  .bill-item {
+    padding: 14px;
+  }
+  
+  .bill-image {
+    height: 110px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
 .bill-item {
   text-align: center;
   padding: 15px;
@@ -1441,6 +1672,68 @@ p {
   background: var(--color-background);
 }
 
+/* Responsive Maksājumi Section */
+@media (max-width: 480px) {
+  .maksajumi-section {
+    padding: 30px 16px;
+  }
+  
+  .maksajumi-container {
+    padding: 20px;
+  }
+  
+  .maksajumi-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .maksajumi-password-input {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+  
+  .maksajumi-password-submit {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  .maksajumi-password-input-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .maksajumi-section {
+    padding: 40px 24px;
+  }
+  
+  .maksajumi-container {
+    padding: 30px;
+  }
+  
+  .maksajumi-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .maksajumi-password-input {
+    width: 220px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .maksajumi-section {
+    padding: 50px 32px;
+  }
+  
+  .maksajumi-container {
+    padding: 35px;
+  }
+}
+
 .maksajumi-container {
   background: white;
   border-radius: var(--border-radius);
@@ -1604,6 +1897,44 @@ p {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Responsive Maksājumi Bills Grid */
+@media (max-width: 480px) {
+  .maksajumi-bills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .maksajumi-bill-item {
+    padding: 15px;
+  }
+  
+  .maksajumi-bill-image {
+    height: 120px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .maksajumi-bills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  
+  .maksajumi-bill-item {
+    padding: 18px;
+  }
+  
+  .maksajumi-bill-image {
+    height: 130px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .maksajumi-bills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
 
 .maksajumi-bill-item {
@@ -1914,6 +2245,38 @@ p {
 }
 
 /* Responsive adjustments for PDF section */
+@media (max-width: 480px) {
+  .pdf-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .pdf-item {
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .pdf-info h5 {
+    font-size: 1rem;
+  }
+  
+  .pdf-info p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .pdf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  
+  .pdf-item {
+    padding: 18px;
+  }
+}
+
 @media (max-width: 768px) {
   .pdf-grid {
     grid-template-columns: 1fr;
@@ -2026,6 +2389,90 @@ p {
 }
 
 /* Responsive adjustments for contact section */
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .contact-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-item {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-details h4 {
+    font-size: 1rem;
+  }
+  
+  .contact-link-email,
+  .contact-link-phone {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .contact-container {
+    padding: 2.5rem 2rem;
+    margin: 1.5rem;
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-item {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-container {
+    padding: 2.75rem 2.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 0.5rem;
+  }
+  
+  .contact-container {
+    padding: 1.5rem;
+    margin: 0.5rem;
+  }
+  
+  .contact-title {
+    font-size: 1.6rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .contact-section {
+    padding: 0.75rem;
+  }
+  
+  .contact-container {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .contact-title {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-section {
     padding: 1rem;
@@ -2104,6 +2551,64 @@ p {
 }
 
 /* Price Grid Item Styles */
+
+/* Responsive Price Grid Item */
+@media (max-width: 480px) {
+  .price-wrapper {
+    padding: 20px 15px;
+  }
+  
+  .price-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .price-currency {
+    font-size: 1.2rem;
+  }
+  
+  .price-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .price-wrapper {
+    padding: 25px 20px;
+  }
+  
+  .price-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.9rem;
+  }
+  
+  .price-currency {
+    font-size: 1.3rem;
+  }
+  
+  .price-value {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .price-wrapper {
+    padding: 30px 25px;
+  }
+  
+  .price-title {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+  }
+  
+  .price-currency {
+    font-size: 1.4rem;
+  }
+  
+  .price-value {
+    font-size: 1.8rem;
+  }
+}
 .price-wrapper {
   background: transparent;
   border: none;
