@@ -5082,3 +5082,91 @@ p {
     z-index: 1001;
   }
 }
+
+/* Fix dropdown positioning on mobile - ensure it appears above all content */
+@media (max-width: 480px) {
+  /* Override desktop dropdown positioning for mobile */
+  .dropdown {
+    position: fixed !important;
+    top: 120px !important; /* Below fixed navigation */
+    left: 15px !important;
+    right: 15px !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    z-index: 10000 !important; /* Above everything */
+    max-height: 60vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(233, 105, 44, 0.2);
+  }
+  
+  /* Ensure dropdown content is properly positioned */
+  .dropdown__content {
+    transform: none !important;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    max-height: none;
+    overflow: visible;
+  }
+  
+  /* When dropdown is open */
+  .dropdown.open {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  /* When dropdown is closed */
+  .dropdown:not(.open) {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* Ensure proper spacing for content below dropdown */
+  .all-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .main-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .grid-content {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+  
+  /* Ensure grid container is below dropdown */
+  .grid-container {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+  
+  /* Add backdrop when dropdown is open */
+  .dropdown.open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+  }
+  
+  /* Ensure dropdown content is above backdrop */
+  .dropdown__content {
+    position: relative;
+    z-index: 10001;
+    background: white;
+  }
+}
