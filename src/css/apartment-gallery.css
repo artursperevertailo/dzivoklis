@@ -4070,6 +4070,25 @@ p {
     color: var(--color-text);
   }
   
+  /* Orange accents for mobile info section */
+  .info-content strong {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
+  .info-content h4:first-of-type {
+    color: var(--color-accent);
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(233, 105, 44, 0.3);
+    padding-bottom: 8px;
+  }
+  
+  .info-content ul li strong {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
   /* Ensure proper content flow */
   .content {
     display: flex;
@@ -5264,6 +5283,25 @@ p {
     color: var(--color-text);
   }
   
+  /* Orange accents for mobile info section */
+  .info-content strong {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
+  .info-content h4:first-of-type {
+    color: var(--color-accent);
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(233, 105, 44, 0.3);
+    padding-bottom: 8px;
+  }
+  
+  .info-content ul li strong {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
   /* Ensure proper content flow: text -> images -> info section */
   .content {
     display: flex;
@@ -5639,11 +5677,11 @@ p {
   .info-title {
     font-size: 18px;
     margin-bottom: 20px;
-    color: var(--color-text);
+    color: var(--color-accent);
     font-weight: 600;
     text-align: left;
-    border-bottom: none;
-    padding-bottom: 0;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
   }
   
   .info-content {
@@ -5716,9 +5754,100 @@ p {
   border-radius: 8px;
 }
 
-/* Hide dropdown on mobile */
-.dropdown {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
+/* Desktop and Tablet: Show dropdown, hide mobile info section */
+@media (min-width: 481px) {
+  .dropdown {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .menu-btn {
+    display: flex !important;
+  }
+  
+  .info-section {
+    display: none !important;
+  }
+}
+
+/* Mobile Contact Section Styles */
+.contact-section {
+  position: fixed !important;
+  top: 120px !important;
+  left: 15px !important;
+  right: 15px !important;
+  z-index: 10000 !important;
+  background: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(233, 105, 44, 0.2) !important;
+  padding: 25px !important;
+  max-height: calc(100vh - 140px) !important;
+  overflow-y: auto !important;
+}
+
+.contact-section .contact-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.contact-section .contact-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--color-accent);
+  text-align: center;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 10px;
+}
+
+.contact-section .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(233, 105, 44, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--color-accent);
+}
+
+.contact-section .contact-icon {
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.contact-section .contact-details h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.contact-section .contact-link-email,
+.contact-section .contact-link-phone {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact-section .contact-link-email:hover,
+.contact-section .contact-link-phone:hover {
+  text-decoration: underline;
+}
+
+.contact-section .contact-message {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(233, 105, 44, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact-section .contact-message p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--color-text);
+  line-height: 1.6;
 }
