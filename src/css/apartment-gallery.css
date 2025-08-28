@@ -3777,3 +3777,204 @@ p {
     line-height: 1.7;
   }
 }
+
+/* Complete mobile layout restructure - new approach */
+@media (max-width: 480px) {
+  /* Fixed navigation at top */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-background);
+    border-bottom: 2px solid rgba(233, 105, 44, 0.3);
+    z-index: 10000;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Main content starts below fixed navigation */
+  .all-content {
+    margin-top: 200px; /* Space for fixed navigation */
+    padding-top: 20px;
+  }
+  
+  /* Ensure dropdown appears above everything */
+  .dropdown {
+    position: fixed;
+    top: 200px; /* Below fixed navigation */
+    left: 15px;
+    right: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(233, 105, 44, 0.2);
+    z-index: 9999;
+    max-height: 60vh;
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+  }
+  
+  /* Show dropdown when active */
+  .dropdown.active {
+    display: block;
+  }
+  
+  /* Main content starts below dropdown */
+  .main-content {
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .grid-content {
+    margin-top: 0;
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Ensure proper spacing */
+  .grid-container {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  
+  /* Navigation elements styling */
+  .navigation__logo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .navigation__center {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--color-text);
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(233, 105, 44, 0.2);
+  }
+  
+  .navigation__right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .contact-link {
+    font-size: 14px;
+    padding: 10px 20px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(233, 105, 44, 0.3);
+  }
+  
+  /* Sections styling */
+  .maksajumi-section,
+  .papildus-section,
+  .contact-section {
+    margin-top: 40px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+}
+
+/* Additional mobile dropdown functionality with new approach */
+@media (max-width: 480px) {
+  /* Ensure dropdown content is properly styled */
+  .dropdown__content {
+    padding: 20px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  
+  .dropdown__title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .dropdown__story {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .dropdown__plan-item,
+  .dropdown__advantage-item,
+  .dropdown__location-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+  
+  /* Ensure proper spacing when dropdown is open */
+  .all-content.dropdown-open {
+    margin-top: 300px; /* Additional space when dropdown is open */
+  }
+  
+  /* Smooth transitions */
+  .dropdown {
+    transition: all 0.3s ease;
+  }
+  
+  .all-content {
+    transition: margin-top 0.3s ease;
+  }
+  
+  /* Ensure menu button is properly styled */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid rgba(233, 105, 44, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .menu-btn .menu-text {
+    font-size: 14px;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+  
+  /* Ensure proper z-index hierarchy */
+  .navigation {
+    z-index: 10000;
+  }
+  
+  .dropdown {
+    z-index: 9999;
+  }
+  
+  .all-content {
+    z-index: 1;
+  }
+}
