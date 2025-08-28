@@ -3141,3 +3141,122 @@ p {
   color: #E9692C;
   letter-spacing: 0.5px;
 }
+
+/* Mobile-specific fixes for navigation and layout */
+@media (max-width: 480px) {
+  /* Ensure dropdown doesn't overlap main content */
+  .dropdown {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+  
+  .dropdown__content {
+    padding: 15px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  
+  /* Make sure Sazināties is visible */
+  .navigation__right {
+    display: flex !important;
+    order: 4;
+    margin-top: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .contact-link {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  /* Adjust main content spacing */
+  .grid-content {
+    margin-top: 20px;
+  }
+  
+  .grid-content h1 {
+    margin-bottom: 15px;
+  }
+  
+  /* Ensure navigation doesn't block content */
+  .navigation__container {
+    position: relative;
+    z-index: 100;
+  }
+  
+  .dropdown {
+    position: relative;
+    z-index: 99;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .dropdown {
+    max-height: 70vh;
+    margin-bottom: 25px;
+  }
+  
+  .navigation__right {
+    display: flex !important;
+    order: 4;
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Ensure contact section is always visible on mobile */
+@media (max-width: 480px) {
+  .contact-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+  }
+  
+  .contact-container {
+    text-align: center;
+  }
+  
+  .contact-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .contact-item {
+    margin-bottom: 15px;
+  }
+  
+  .contact-details h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--color-accent);
+  }
+  
+  .contact-link-email,
+  .contact-link-phone {
+    font-size: 14px;
+    color: var(--color-text);
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    background: rgba(233, 105, 44, 0.1);
+    border-radius: 6px;
+    margin: 5px 0;
+  }
+  
+  .contact-link-email:hover,
+  .contact-link-phone:hover {
+    background: rgba(233, 105, 44, 0.2);
+  }
+}
