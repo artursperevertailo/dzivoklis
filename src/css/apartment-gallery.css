@@ -3391,3 +3391,197 @@ p {
     padding-top: 25px;
   }
 }
+
+/* Complete mobile navigation fix */
+@media (max-width: 480px) {
+  /* Fix navigation positioning and prevent overlap */
+  .navigation__container {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    background: transparent;
+    z-index: auto;
+    padding: 10px;
+    box-shadow: none;
+    margin-bottom: 20px;
+  }
+  
+  /* Ensure main content is properly positioned */
+  .main-content {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+  
+  .grid-content {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+  
+  /* Remove body padding that was causing issues */
+  body {
+    padding-top: 0;
+  }
+  
+  /* Make dropdown functional and visible */
+  .dropdown {
+    position: relative;
+    z-index: 100;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown__content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    max-height: none;
+    overflow: visible;
+    padding: 15px;
+  }
+  
+  /* Ensure navigation elements are properly spaced */
+  .navigation__center {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--color-text);
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Make sure Sazināties is visible */
+  .navigation__right {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .contact-link {
+    font-size: 14px;
+    padding: 10px 20px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(233, 105, 44, 0.3);
+  }
+  
+  /* Ensure proper spacing for all content */
+  .all-content {
+    margin-top: 0;
+  }
+  
+  .grid-container {
+    margin-top: 20px;
+  }
+  
+  /* Fix any remaining overlap issues */
+  .grid-item {
+    margin-bottom: 15px;
+  }
+  
+  .price-wrapper {
+    margin-top: 15px;
+  }
+}
+
+/* Additional mobile dropdown functionality */
+@media (max-width: 480px) {
+  /* Ensure dropdown button works properly */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid rgba(233, 105, 44, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-btn .menu-text {
+    font-size: 14px;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+  
+  /* Ensure dropdown content is properly styled */
+  .dropdown__title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .dropdown__story {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .dropdown__plan-item,
+  .dropdown__advantage-item,
+  .dropdown__location-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+  
+  /* Ensure all sections are properly spaced */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Tablet adjustments for dropdown */
+@media (min-width: 481px) and (max-width: 768px) {
+  .dropdown {
+    margin-bottom: 25px;
+  }
+  
+  .dropdown__content {
+    padding: 20px;
+  }
+  
+  .navigation__center {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+}
