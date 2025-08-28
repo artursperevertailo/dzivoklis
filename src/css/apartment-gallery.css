@@ -4105,7 +4105,7 @@ p {
   .info-title {
     font-size: 18px;
     margin-bottom: 20px;
-    color: var(--color-text);
+    color: #E9692C;
     font-weight: 600;
     text-align: center;
     border-bottom: 2px solid var(--color-accent);
@@ -4120,13 +4120,14 @@ p {
   .info-content p {
     font-size: 14px;
     margin-bottom: 15px;
-    color: var(--color-text);
+    color: #000000;
+    font-weight: 600;
   }
   
   .info-content h4 {
     font-size: 16px;
     margin-bottom: 10px;
-    color: var(--color-accent);
+    color: #E9692C;
     font-weight: 600;
     margin-top: 20px;
   }
@@ -4139,17 +4140,18 @@ p {
   .info-content li {
     font-size: 14px;
     margin-bottom: 8px;
-    color: var(--color-text);
+    color: #000000;
+    font-weight: 600;
   }
   
   /* Orange accents for mobile info section */
   .info-content strong {
-    color: var(--color-accent);
-    font-weight: 600;
+    color: #E9692C;
+    font-weight: 700;
   }
   
   .info-content h4:first-of-type {
-    color: var(--color-accent);
+    color: #E9692C;
     font-size: 18px;
     margin-bottom: 15px;
     border-bottom: 1px solid rgba(233, 105, 44, 0.3);
@@ -4157,8 +4159,8 @@ p {
   }
   
   .info-content ul li strong {
-    color: var(--color-accent);
-    font-weight: 600;
+    color: #E9692C;
+    font-weight: 700;
   }
   
   /* Ensure proper content flow */
@@ -5868,7 +5870,7 @@ p {
 .contact-section .contact-title {
   font-size: 20px;
   margin-bottom: 20px;
-  color: var(--color-accent);
+  color: #E9692C;
   text-align: center;
   border-bottom: 2px solid var(--color-accent);
   padding-bottom: 10px;
@@ -5879,7 +5881,7 @@ p {
   align-items: center;
   margin-bottom: 20px;
   padding: 15px;
-  background: rgba(233, 105, 44, 0.05);
+  background: #000000;
   border-radius: 8px;
   border-left: 3px solid var(--color-accent);
 }
@@ -5892,13 +5894,13 @@ p {
 .contact-section .contact-details h4 {
   font-size: 16px;
   margin-bottom: 5px;
-  color: var(--color-text);
+  color: #E9692C;
   font-weight: 600;
 }
 
 .contact-section .contact-link-email,
 .contact-section .contact-link-phone {
-  color: var(--color-accent);
+  color: #E9692C;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -5912,7 +5914,7 @@ p {
 .contact-section .contact-message {
   margin-top: 25px;
   padding: 20px;
-  background: rgba(233, 105, 44, 0.1);
+  background: #000000;
   border-radius: 8px;
   text-align: center;
 }
@@ -5920,7 +5922,7 @@ p {
 .contact-section .contact-message p {
   font-size: 14px;
   margin-bottom: 10px;
-  color: var(--color-text);
+  color: #E9692C;
   line-height: 1.6;
 }
 
