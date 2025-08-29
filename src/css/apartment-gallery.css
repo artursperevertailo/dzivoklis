@@ -1350,12 +1350,12 @@ p {
 /* Lightbox Styles */
 .lightbox {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -2831,7 +2831,7 @@ p {
 }
 
 .contact-container {
-  background: white;
+  background: var(--color-background);
   border-radius: var(--border-radius);
   padding: 3rem;
   max-width: 600px;
@@ -2860,7 +2860,7 @@ p {
   }
 
   .contact-close:hover {
-    background: #E9692C;
+    background: var(--color-accent);
     color: white;
     transform: scale(1.1);
   }
@@ -2868,7 +2868,7 @@ p {
   .contact-title {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #2C2C2C;
+    color: var(--color-foreground);
     margin-bottom: 2rem;
     text-align: center;
     border-bottom: 3px solid var(--color-accent);
@@ -2892,18 +2892,18 @@ p {
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: #FFFFFF;
+  background: var(--color-menu-bg);
   border-radius: var(--border-radius);
-  border: 1px solid #FFE8D6;
+  border: 1px solid var(--color-accent);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-  background: #FFFFFF;
+  background: var(--color-menu-bg);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(233, 105, 44, 0.15);
-  border-color: #E9692C;
+  box-shadow: 0 8px 25px rgba(197, 184, 165, 0.3);
+  border-color: var(--color-accent);
 }
 
 .contact-icon {
@@ -2913,13 +2913,13 @@ p {
   .contact-details h4 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #E9692C;
+    color: var(--color-accent);
     margin: 0 0 0.5rem 0;
   }
 
   .contact-link-email,
   .contact-link-phone {
-    color: #2C2C2C;
+    color: var(--color-foreground);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
@@ -2928,7 +2928,7 @@ p {
 
   .contact-link-email:hover,
   .contact-link-phone:hover {
-    color: #E9692C;
+    color: var(--color-accent);
     text-decoration: underline;
     font-weight: 700;
   }
@@ -2936,15 +2936,15 @@ p {
 .contact-message {
   text-align: center;
   padding: 1.5rem;
-  background: #FFFFFF;
+  background: var(--color-menu-bg);
   border-radius: var(--border-radius);
-  border: 1px solid #FFE8D6;
+  border: 1px solid var(--color-accent);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .contact-message p {
   margin: 0.5rem 0;
-  color: #2C2C2C;
+  color: var(--color-foreground);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -5875,7 +5875,7 @@ p {
 .contact-section .contact-title {
   font-size: 20px;
   margin-bottom: 20px;
-  color: #E9692C;
+  color: var(--color-accent);
   text-align: center;
   border-bottom: 2px solid var(--color-accent);
   padding-bottom: 10px;
@@ -5886,9 +5886,9 @@ p {
   align-items: center;
   margin-bottom: 20px;
   padding: 15px;
-  background: #FFFFFF;
+  background: var(--color-menu-bg);
   border-radius: 8px;
-  border: 1px solid #FFE8D6;
+  border: 1px solid var(--color-accent);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
@@ -5901,13 +5901,13 @@ p {
 .contact-section .contact-details h4 {
   font-size: 16px;
   margin-bottom: 5px;
-  color: #E9692C;
+  color: var(--color-accent);
   font-weight: 600;
 }
 
 .contact-section .contact-link-email,
 .contact-section .contact-link-phone {
-  color: #E9692C;
+  color: var(--color-accent);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -5921,17 +5921,17 @@ p {
 .contact-section .contact-message {
   margin-top: 25px;
   padding: 20px;
-  background: #FFFFFF;
+  background: var(--color-menu-bg);
   border-radius: 8px;
   text-align: center;
-  border: 1px solid #FFE8D6;
+  border: 1px solid var(--color-accent);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .contact-section .contact-message p {
   font-size: 14px;
   margin-bottom: 10px;
-  color: #E9692C;
+  color: var(--color-accent);
   line-height: 1.6;
 }
 
