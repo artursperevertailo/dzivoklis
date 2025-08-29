@@ -327,12 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
         duration: 0.3,
         ease: "easeOutFast",
         onComplete: () => {
-          // Pārliecināmies, ka lightbox ir redzams
-          lightbox.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center',
-            inline: 'center'
-          });
+          // Lightbox atvērts veiksmīgi
         }
       });
       
@@ -831,6 +826,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (dropdown) dropdown.style.display = 'none';
     if (maksajumiSection) maksajumiSection.style.display = 'none';
     if (papildusSection) papildusSection.style.display = 'none';
+    
+    // Saglabājam pašreizējo scroll pozīciju
+    const currentScrollY = window.scrollY;
+    
+    // Iestatām contact sadaļas pozīciju tieši tur, kur lietotājs atrodas
+    contactSection.style.top = currentScrollY + 'px';
     
     // Show contact section
     contactSection.style.display = 'flex';
