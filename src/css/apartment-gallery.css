@@ -2908,11 +2908,11 @@ p {
     position: absolute;
     top: 15px;
     right: 20px;
-    background: none;
-    border: none;
+    background: var(--color-accent);
+    border: 2px solid var(--color-accent);
     font-size: 28px;
     cursor: pointer;
-    color: #000000;
+    color: white;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -2920,6 +2920,9 @@ p {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    z-index: 10001;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .contact-close:hover {
@@ -3084,11 +3087,14 @@ p {
   }
   
   .contact-close {
+    position: absolute !important;
     z-index: 10001;
     background: var(--color-accent);
     color: white;
     border: 2px solid var(--color-accent);
     cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -3129,11 +3135,14 @@ p {
   }
   
   .contact-close {
+    position: absolute !important;
     z-index: 10001;
     background: var(--color-accent);
     color: white;
     border: 2px solid var(--color-accent);
     cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -5965,6 +5974,7 @@ p {
   }
   
   .contact-close {
+    position: absolute !important;
     top: 10px;
     right: 15px;
     width: 50px;
@@ -5975,6 +5985,8 @@ p {
     color: white;
     z-index: 10001;
     cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -6057,6 +6069,7 @@ p {
 /* Mobile Contact Section - Modern Design */
 @media (max-width: 768px) {
   .contact-close {
+    position: absolute !important;
     z-index: 10001;
     background: var(--color-accent);
     color: white;
@@ -6064,7 +6077,6 @@ p {
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    position: relative;
   }
 }
 
