@@ -3082,6 +3082,14 @@ p {
     gap: 0.5rem;
     padding: 1rem;
   }
+  
+  .contact-close {
+    z-index: 10001;
+    background: var(--color-accent);
+    color: white;
+    border: 2px solid var(--color-accent);
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -3118,6 +3126,14 @@ p {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+  }
+  
+  .contact-close {
+    z-index: 10001;
+    background: var(--color-accent);
+    color: white;
+    border: 2px solid var(--color-accent);
+    cursor: pointer;
   }
 }
 
@@ -5954,8 +5970,11 @@ p {
     width: 50px;
     height: 50px;
     font-size: 30px;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--color-accent);
     border: 2px solid var(--color-accent);
+    color: white;
+    z-index: 10001;
+    cursor: pointer;
   }
 }
 
@@ -6036,4 +6055,13 @@ p {
 }
 
 /* Mobile Contact Section - Modern Design */
+@media (max-width: 768px) {
+  .contact-close {
+    z-index: 10001;
+    background: var(--color-accent);
+    color: white;
+    border: 2px solid var(--color-accent);
+    cursor: pointer;
+  }
+}
 
