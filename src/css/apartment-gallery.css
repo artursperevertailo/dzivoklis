@@ -5938,7 +5938,9 @@ p {
 /* Mobile Contact Section Styles */
 @media (max-width: 768px) {
   .contact-section {
-    padding: 1rem;
+    padding: 0.5rem;
+    align-items: flex-start;
+    padding-top: 2rem;
   }
   
   .contact-container {
@@ -5953,11 +5955,14 @@ p {
   }
   
   .contact-close {
-    top: 10px;
-    right: 15px;
-    width: 35px;
-    height: 35px;
-    font-size: 24px;
+    top: 15px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--color-accent);
+    z-index: 1001;
   }
   
   .contact-item {
@@ -5979,6 +5984,7 @@ p {
   .contact-container {
     padding: 1.5rem 1rem;
     max-width: 98%;
+    margin: 0 5px;
   }
   
   .contact-title {
@@ -6002,6 +6008,16 @@ p {
   .contact-icon svg {
     width: 20px;
     height: 20px;
+  }
+  
+  .contact-close {
+    top: 10px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--color-accent);
   }
 }
 
