@@ -308,19 +308,27 @@ document.addEventListener('DOMContentLoaded', function() {
   function openLightbox(index) {
     console.log('Opening lightbox for image:', index);
     try {
+      // Saglabājam pašreizējo scroll pozīciju
+      const currentScrollY = window.scrollY;
+      
       currentImageIndex = index;
       updateLightbox();
       
       gsap.set(lightbox, { opacity: 0 });
       lightbox.classList.add('show');
       
+      // Atveram lightbox un tad atjaunojam scroll pozīciju
       gsap.to(lightbox, {
         opacity: 1,
         duration: 0.3,
-        ease: "easeOutFast"
+        ease: "easeOutFast",
+        onComplete: () => {
+          // Atjaunojam scroll pozīciju, lai lightbox atvērtos tur kur esam
+          window.scrollTo(0, currentScrollY);
+        }
       });
       
-      console.log('Lightbox opened successfully');
+      console.log('Lightbox opened successfully at scroll position:', currentScrollY);
     } catch (error) {
       console.error('Error opening lightbox:', error);
     }
