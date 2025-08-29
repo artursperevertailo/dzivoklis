@@ -881,6 +881,12 @@ document.addEventListener('DOMContentLoaded', function() {
     contactCloseBtn.addEventListener('click', () => {
       closeContactSection();
     });
+    
+    // Add touch event for mobile
+    contactCloseBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      closeContactSection();
+    });
   }
 
   // Close contact section when clicking outside - COMMENTED OUT FOR TESTING
