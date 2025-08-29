@@ -852,19 +852,22 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function closeContactSection() {
+    console.log('closeContactSection() called - starting animation');
+    
     // Animate out
     gsap.to(contactSection, {
       opacity: 0,
       duration: 0.3,
       ease: "easeOutFast",
       onComplete: () => {
+        console.log('Contact section animation complete - hiding');
         contactSection.style.display = 'none';
         // Don't restore allContent - it was causing the page to disappear
         // if (allContent) allContent.style.display = 'block';
       }
     });
     
-    console.log('Contact section closed');
+    console.log('Contact section close animation started');
   }
 
   // Contact link click handler
@@ -878,15 +881,30 @@ document.addEventListener('DOMContentLoaded', function() {
   // Contact close button handler
   const contactCloseBtn = document.getElementById('contact-close');
   if (contactCloseBtn) {
-    contactCloseBtn.addEventListener('click', () => {
+    console.log('Contact close button found, adding event listeners');
+    
+    contactCloseBtn.addEventListener('click', (e) => {
+      console.log('Contact close CLICK event triggered');
+      e.preventDefault();
+      e.stopPropagation();
       closeContactSection();
     });
     
     // Add touch event for mobile
     contactCloseBtn.addEventListener('touchstart', (e) => {
+      console.log('Contact close TOUCHSTART event triggered');
       e.preventDefault();
+      e.stopPropagation();
       closeContactSection();
     });
+    
+    contactCloseBtn.addEventListener('touchend', (e) => {
+      console.log('Contact close TOUCHEND event triggered');
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  } else {
+    console.error('Contact close button NOT found!');
   }
 
   // Close contact section when clicking outside - COMMENTED OUT FOR TESTING

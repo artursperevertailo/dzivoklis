@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .test-container {
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .test-box {
+            background: #F8F6F2;
+            border: 3px solid #E9692C;
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .close-span, .close-button {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #E9692C;
+            border: 2px solid #E9692C;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 10001;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .test-content {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .test-log {
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container" id="test-container">
+        <div class="test-box">
+            <span class="close-span" id="close-span">&times;</span>
+            <button class="close-button" id="close-button" style="right: 80px;">&times;</button>
+            
+            <div class="test-content">
+                <h2>Touch Event Test</h2>
+                <p>Test both SPAN and BUTTON close elements on mobile</p>
+                <div class="test-log" id="test-log">Event log will appear here...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const testLog = document.getElementById('test-log');
+        const closeSpan = document.getElementById('close-span');
+        const closeButton = document.getElementById('close-button');
+        const testContainer = document.getElementById('test-container');
+
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            testLog.innerHTML += `[${timestamp}] ${message}<br>`;
+            testLog.scrollTop = testLog.scrollHeight;
+        }
+
+        // SPAN events
+        closeSpan.addEventListener('click', (e) => {
+            log('SPAN: click event triggered');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        closeSpan.addEventListener('touchstart', (e) => {
+            log('SPAN: touchstart event triggered');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        closeSpan.addEventListener('touchend', (e) => {
+            log('SPAN: touchend event triggered');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        // BUTTON events
+        closeButton.addEventListener('click', (e) => {
+            log('BUTTON: click event triggered');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        closeButton.addEventListener('touchstart', (e) => {
+            log('BUTTON: touchstart event triggered');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        closeButton.addEventListener('touchend', (e) => {
+            log('BUTTON: touchend event triggered');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        // Background click
+        testContainer.addEventListener('click', (e) => {
+            if (e.target === testContainer) {
+                log('Background clicked - closing');
+                testContainer.style.display = 'none';
+            }
+        });
+
+        log('Touch test initialized');
+    </script>
+</body>
+</html>
