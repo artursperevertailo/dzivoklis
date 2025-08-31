@@ -3775,17 +3775,6 @@ p {
     /* Mobile touch optimization */
     touch-action: manipulation;
   }
-  
-  .contact-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    
-    /* Mobile touch optimization */
-    touch-action: manipulation;
-  }
 }
 
 /* Tablet adjustments for dropdown */
@@ -5428,39 +5417,107 @@ p {
     overflow: visible;
   }
   
-  /* Contact section functionality */
-  .contact-section {
-    display: none; /* Hidden by default, JavaScript controls */
-    position: fixed;
-    top: 120px;
-    left: 15px;
-    right: 15px;
-    z-index: 10000;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(233, 105, 44, 0.2);
-    padding: 25px;
-    
-    /* Mobile touch optimization */
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-    
-    /* Mobile responsive positioning */
-    @media (max-width: 768px) {
-      top: 50% !important;
-      left: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      width: 90% !important;
-      max-width: 400px !important;
-      right: auto !important;
-    }
+  /* Jaunais Contact Modal */
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+
+.contact-modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--color-accent);
+  position: relative;
+}
+
+.contact-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 25px 20px 25px;
+  border-bottom: 2px solid var(--color-accent);
+  background: linear-gradient(135deg, #F8F6F2 0%, #F0EDE8 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.contact-modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.contact-modal-close {
+  background: var(--color-accent);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.contact-modal-close:hover {
+  background: #d4a574;
+  transform: scale(1.1);
+}
+
+.contact-modal-body {
+  padding: 25px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .contact-modal-content {
+    width: 95%;
+    max-width: 400px;
+    margin: 20px;
   }
   
-  /* When JavaScript shows contact section */
-  .contact-section[style*="display: flex"] {
-    display: flex !important;
+  .contact-modal-header {
+    padding: 20px 20px 15px 20px;
   }
+  
+  .contact-modal-title {
+    font-size: 24px;
+  }
+  
+  .contact-modal-body {
+    padding: 20px;
+  }
+  
+  .contact-modal-close {
+    width: 45px;
+    height: 45px;
+  }
+}
   
   /* Ensure proper spacing for content */
   .all-content {
@@ -5483,9 +5540,8 @@ p {
     padding-top: 20px;
   }
   
-  /* Add backdrop when sections are open */
-  .dropdown.open::before,
-  .contact-section[style*="display: flex"]::before {
+  /* Add backdrop when dropdown is open */
+  .dropdown.open::before {
     content: '';
     position: fixed;
     top: 0;
@@ -6271,8 +6327,7 @@ p {
   
   /* Section spacing */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 30px !important;
     padding: 20px !important;
   }
@@ -6297,34 +6352,10 @@ p {
   .grid-image,
   .nav-link,
   .menu-btn,
-  .contact-close,
   .price-wrapper,
   .info-section {
     touch-action: manipulation !important;
     -webkit-tap-highlight-color: transparent !important;
-  }
-  
-  /* Mobile contact close button specific optimizations */
-  .contact-close {
-    position: absolute !important;
-    top: 15px !important;
-    right: 20px !important;
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 30px !important;
-    background: var(--color-accent) !important;
-    color: white !important;
-    border: 2px solid var(--color-accent) !important;
-    cursor: pointer !important;
-    z-index: 10001 !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    touch-action: manipulation !important;
-    -webkit-tap-highlight-color: transparent !important;
-    user-select: none !important;
-    box-shadow: 0 4px 15px rgba(233, 105, 44, 0.3) !important;
   }
   
   /* Mobile layout improvements */
@@ -6373,7 +6404,6 @@ p {
   .grid-image,
   .nav-link,
   .menu-btn,
-  .contact-close,
   .price-wrapper,
   .info-section {
     touch-action: manipulation !important;

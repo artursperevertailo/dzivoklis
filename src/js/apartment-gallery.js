@@ -821,116 +821,105 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('Papildus informācija section functionality initialized');
   console.log('PDF viewer functionality initialized');
 
-  // Contact Section Functionality
-  function openContactSection() {
-    // Don't hide all content - just show contact section
-    // if (allContent) allContent.style.display = 'none';
-    if (dropdown) dropdown.style.display = 'none';
-    if (maksajumiSection) maksajumiSection.style.display = 'none';
-    if (papildusSection) papildusSection.style.display = 'none';
-    
-    // Saglabājam pašreizējo scroll pozīciju
-    const currentScrollY = window.scrollY;
-    
-    // Iestatām contact sadaļas pozīciju tieši tur, kur lietotājs atrodas
-    contactSection.style.top = currentScrollY + 'px';
-    
-    // Show contact section
-    contactSection.style.display = 'flex';
-    
-    // Animate in
-    gsap.fromTo(contactSection, 
-      { opacity: 0 },
-      { opacity: 1, duration: 0.5, ease: "easeOutFast" }
-    );
-    
-    // Animate contact container
-    gsap.fromTo(contactSection.querySelector('.contact-container'), 
-      { opacity: 0, y: 30, scale: 0.9 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "easeOutFast" }
-    );
-    
-    console.log('Contact section opened');
+  // Jaunais Contact Modal Functionality
+  function openContactModal() {
+    const contactModal = document.getElementById('contact-modal');
+    if (contactModal) {
+      contactModal.classList.add('show');
+      
+      // Animate in
+      gsap.fromTo(contactModal, 
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3, ease: "easeOutFast" }
+      );
+      
+      // Animate modal content
+      gsap.fromTo(contactModal.querySelector('.contact-modal-content'), 
+        { opacity: 0, y: 30, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "easeOutFast" }
+      );
+      
+      console.log('Contact modal opened');
+    }
   }
 
-  function closeContactSection() {
-    console.log('closeContactSection() called - starting animation');
-    
-    // Animate out
-    gsap.to(contactSection, {
-      opacity: 0,
-      duration: 0.3,
-      ease: "easeOutFast",
-      onComplete: () => {
-        console.log('Contact section animation complete - hiding');
-        contactSection.style.display = 'none';
-        // Don't restore allContent - it was causing the page to disappear
-        // if (allContent) allContent.style.display = 'block';
-      }
-    });
-    
-    console.log('Contact section close animation started');
+  function closeContactModal() {
+    const contactModal = document.getElementById('contact-modal');
+    if (contactModal) {
+      // Animate out
+      gsap.to(contactModal.querySelector('.contact-modal-content'), {
+        opacity: 0,
+        y: 30,
+        scale: 0.9,
+        duration: 0.3,
+        ease: "easeOutFast",
+        onComplete: () => {
+          gsap.to(contactModal, {
+            opacity: 0,
+            duration: 0.2,
+            ease: "easeOutFast",
+            onComplete: () => {
+              contactModal.classList.remove('show');
+              console.log('Contact modal closed');
+            }
+          });
+        }
+      });
+    }
   }
 
   // Contact link click handler
   if (contactLink) {
     contactLink.addEventListener('click', (e) => {
       e.preventDefault();
-      openContactSection();
+      openContactModal();
     });
   }
 
-  // Contact close button handler
-  const contactCloseBtn = document.getElementById('contact-close');
-  if (contactCloseBtn) {
-    console.log('Contact close button found, adding event listeners');
+  // Contact modal close button handler
+  const contactModalClose = document.getElementById('contact-modal-close');
+  if (contactModalClose) {
+    console.log('Contact modal close button found, adding event listeners');
     
-    // Single click event for all devices - better mobile compatibility
-    contactCloseBtn.addEventListener('click', (e) => {
-      console.log('Contact close CLICK event triggered');
+    // Click event
+    contactModalClose.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      closeContactSection();
+      closeContactModal();
     });
     
-    // Mobile touch optimization - prevent default touch behavior
-    contactCloseBtn.addEventListener('touchstart', (e) => {
-      e.preventDefault(); // Prevent default touch behavior
-      e.stopPropagation();
-      console.log('Contact close TOUCHSTART event triggered');
-    }, { passive: false });
-    
-    // Additional touch event for better mobile compatibility
-    contactCloseBtn.addEventListener('touchend', (e) => {
+    // Touch events for mobile
+    contactModalClose.addEventListener('touchstart', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      console.log('Contact close TOUCHEND event triggered');
-      closeContactSection();
+    }, { passive: false });
+    
+    contactModalClose.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeContactModal();
     }, { passive: false });
     
   } else {
-    console.error('Contact close button NOT found!');
+    console.error('Contact modal close button NOT found!');
   }
 
-  // Close contact section when clicking outside - COMMENTED OUT FOR TESTING
-  /*
-  if (contactSection) {
-    contactSection.addEventListener('click', (e) => {
-      if (e.target === contactSection) {
-        closeContactSection();
+  // Close modal when clicking outside
+  const contactModal = document.getElementById('contact-modal');
+  if (contactModal) {
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) {
+        closeContactModal();
       }
     });
   }
-  */
 
-  // Close contact section with Escape key - COMMENTED OUT FOR TESTING
-  /*
+  // Close modal with Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && contactSection.style.display === 'flex') {
-      closeContactSection();
+    if (e.key === 'Escape' && contactModal && contactModal.classList.contains('show')) {
+      closeContactModal();
     }
   });
-  */
 
-  console.log('Contact section functionality initialized');
+  console.log('Contact modal functionality initialized');
 });
