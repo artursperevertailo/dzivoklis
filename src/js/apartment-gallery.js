@@ -833,9 +833,9 @@ document.addEventListener('DOMContentLoaded', function() {
         { opacity: 1, duration: 0.3, ease: "easeOutFast" }
       );
       
-      // Animate modal content
+      // Animate modal content from top
       gsap.fromTo(contactModal.querySelector('.contact-modal-content'), 
-        { opacity: 0, y: 30, scale: 0.9 },
+        { opacity: 0, y: -50, scale: 0.95 },
         { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "easeOutFast" }
       );
       
@@ -846,11 +846,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeContactModal() {
     const contactModal = document.getElementById('contact-modal');
     if (contactModal) {
-      // Animate out
+      // Animate out to top
       gsap.to(contactModal.querySelector('.contact-modal-content'), {
         opacity: 0,
-        y: 30,
-        scale: 0.9,
+        y: -50,
+        scale: 0.95,
         duration: 0.3,
         ease: "easeOutFast",
         onComplete: () => {
