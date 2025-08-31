@@ -3269,53 +3269,7 @@ p {
   }
 }
 
-/* Ensure contact section is always visible on mobile */
-@media (max-width: 480px) {
-  .contact-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: var(--border-radius);
-    backdrop-filter: blur(10px);
-  }
-  
-  .contact-container {
-    text-align: center;
-  }
-  
-  .contact-title {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: var(--color-text);
-  }
-  
-  .contact-item {
-    margin-bottom: 15px;
-  }
-  
-  .contact-details h4 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: var(--color-accent);
-  }
-  
-  .contact-link-email,
-  .contact-link-phone {
-    font-size: 14px;
-    color: var(--color-text);
-    text-decoration: none;
-    display: block;
-    padding: 8px;
-    background: rgba(233, 105, 44, 0.1);
-    border-radius: 6px;
-    margin: 5px 0;
-  }
-  
-  .contact-link-email:hover,
-  .contact-link-phone:hover {
-    background: rgba(233, 105, 44, 0.2);
-  }
-}
+/* Vecie contact section stili noņemti */
 
 /* Fix main content visibility on mobile */
 @media (max-width: 480px) {
@@ -3410,8 +3364,7 @@ p {
   
   /* Ensure proper spacing for all sections */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 40px;
     padding-top: 20px;
   }
@@ -3438,8 +3391,7 @@ p {
   }
   
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 35px;
     padding-top: 25px;
   }
@@ -3752,8 +3704,7 @@ p {
   
   /* Ensure sections are properly spaced */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 30px; /* Reduced from 40px */
     padding: 20px; /* Reduced from 25px */
     background: white;
@@ -3833,8 +3784,7 @@ p {
   
   /* Add visual separation between sections */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 50px;
     padding: 30px;
     background: white;
