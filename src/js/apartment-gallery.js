@@ -896,6 +896,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile touch optimization - prevent default touch behavior
     contactCloseBtn.addEventListener('touchstart', (e) => {
       e.preventDefault(); // Prevent default touch behavior
+      e.stopPropagation();
+      console.log('Contact close TOUCHSTART event triggered');
+    }, { passive: false });
+    
+    // Additional touch event for better mobile compatibility
+    contactCloseBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Contact close TOUCHEND event triggered');
+      closeContactSection();
     }, { passive: false });
     
   } else {
