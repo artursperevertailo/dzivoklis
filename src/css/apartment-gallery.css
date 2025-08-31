@@ -2917,95 +2917,7 @@ p {
 /* Vecais contact-icon noņemts */
 }
 
-  .contact-details h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #000000;
-    margin: 0 0 0.5rem 0;
-  }
 
-  .contact-link-email,
-  .contact-link-phone {
-    color: #000000;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .contact-link-email:hover,
-  .contact-link-phone:hover {
-    color: var(--color-accent);
-    text-decoration: underline;
-    font-weight: 700;
-  }
-
-.contact-message {
-  text-align: center;
-  padding: 1.5rem;
-  background: transparent;
-  border-radius: var(--border-radius);
-  border: 2px solid var(--color-accent);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.contact-message p {
-  margin: 0.5rem 0;
-  color: #000000;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Responsive adjustments for contact section */
-@media (max-width: 480px) {
-  .contact-container {
-    padding: 2rem 1.5rem;
-    margin: 1rem;
-  }
-  
-  .contact-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .contact-item {
-    padding: 1rem;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .contact-details h4 {
-    font-size: 1rem;
-    color: #ffffff;
-  }
-  
-  .contact-link-email,
-  .contact-link-phone {
-    font-size: 1rem;
-    color: #ffffff;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .contact-container {
-    padding: 2.5rem 2rem;
-    margin: 1.5rem;
-  }
-  
-  .contact-title {
-    font-size: 2rem;
-  }
-  
-  .contact-item {
-    padding: 1.25rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .contact-container {
-    padding: 2.75rem 2.5rem;
-  }
-}
 /* Vecie contact section stili noņemti */
 
 /* Vecie contact section stili noņemti */
@@ -3915,8 +3827,7 @@ p {
   
   /* Sections styling */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 40px;
     padding: 25px;
     background: white;
@@ -4169,8 +4080,7 @@ p {
   
   /* Sections styling */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 30px;
     padding: 25px;
     background: white;
@@ -4271,8 +4181,7 @@ p {
   
   /* Ensure proper spacing for all sections on tablets */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 35px;
     padding: 30px;
     background: white;
@@ -4480,24 +4389,15 @@ p {
   /* Sections styling */
   .maksajumi-section,
   .papildus-section,
-  .contact-section {
-    margin-top: 30px;
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(233, 105, 44, 0.1);
-  }
+
   
   .maksajumi-container,
-  .papildus-container,
-  .contact-container {
+  .papildus-container {
     text-align: center;
   }
   
   .maksajumi-title,
-  .papildus-title,
-  .contact-title {
+  .papildus-title {
     font-size: 18px;
     margin-bottom: 20px;
     color: var(--color-text);
@@ -4566,29 +4466,7 @@ p {
     font-size: 14px;
   }
   
-  /* Contact section */
-  .contact-item {
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  
-  .contact-details h4 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: var(--color-accent);
-  }
-  
-  .contact-link-email,
-  .contact-link-phone {
-    font-size: 14px;
-    color: var(--color-text);
-    text-decoration: none;
-    display: block;
-    padding: 8px;
-    background: rgba(233, 105, 44, 0.1);
-    border-radius: 6px;
-    margin: 5px 0;
-  }
+
   
   /* Lightbox adjustments */
   .lightbox {
@@ -4714,15 +4592,13 @@ p {
   
   /* Sections */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 35px;
     padding: 30px;
   }
   
   .maksajumi-title,
-  .papildus-title,
-  .contact-title {
+  .papildus-title {
     font-size: 20px;
     margin-bottom: 25px;
   }
@@ -4843,15 +4719,13 @@ p {
   
   /* Sections */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 40px;
     padding: 40px;
   }
   
   .maksajumi-title,
-  .papildus-title,
-  .contact-title {
+  .papildus-title {
     font-size: 24px;
     margin-bottom: 30px;
   }
@@ -4949,8 +4823,7 @@ p {
   
   /* Sections styling */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 30px;
     padding: 25px;
     background: white;
@@ -5479,8 +5352,7 @@ p {
   
   /* Sections styling */
   .maksajumi-section,
-  .papildus-section,
-  .contact-section {
+  .papildus-section {
     margin-top: 30px;
     padding: 25px;
     background: white;
@@ -5930,52 +5802,7 @@ p {
 
 
 
-@media (max-width: 480px) {
-  .contact-container {
-    padding: 1.5rem 1rem;
-    max-width: 98%;
-    margin: 0 5px;
-  }
-  
-  .contact-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-content {
-    gap: 1.5rem;
-  }
-  
-  .contact-info {
-    gap: 1rem;
-  }
-  
-  .contact-item {
-    padding: 0.8rem;
-    gap: 0.6rem;
-  }
-  
-  .contact-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .contact-close {
-    position: absolute !important;
-    top: 10px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    font-size: 30px;
-    background: var(--color-accent);
-    border: 2px solid var(--color-accent);
-    color: white;
-    z-index: 10001;
-    cursor: pointer;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-  }
-}
+
 
 /* Mobile Info Section - Modern Design */
 @media (max-width: 768px) {
@@ -6053,41 +5880,7 @@ p {
   }
 }
 
-/* Mobile Contact Section - Modern Design */
-@media (max-width: 768px) {
-  .contact-close {
-    position: absolute !important;
-    top: 15px !important;
-    right: 20px !important;
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 30px !important;
-    background: var(--color-accent) !important;
-    color: white !important;
-    border: 2px solid var(--color-accent) !important;
-    cursor: pointer !important;
-    z-index: 10001 !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    touch-action: manipulation !important;
-    -webkit-tap-highlight-color: transparent !important;
-    user-select: none !important;
-    box-shadow: 0 4px 15px rgba(233, 105, 44, 0.3) !important;
-  }
-  
-  /* Ensure contact section is properly positioned */
-  .contact-section {
-    position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 90% !important;
-    max-width: 400px !important;
-    z-index: 10000 !important;
-  }
-}
+
 
 /* ===== CONSOLIDATED MOBILE OPTIMIZATIONS ===== */
 /* All mobile-specific styles in one place for better organization */
