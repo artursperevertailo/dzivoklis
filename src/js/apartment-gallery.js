@@ -500,6 +500,8 @@ document.addEventListener('DOMContentLoaded', function() {
   let endX = 0;
 
   if (lightbox) {
+    // Mobile touch optimization - using passive touch events for swipe
+    // These are less problematic than preventDefault() events
     lightbox.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
     }, { passive: true });
@@ -883,6 +885,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (contactCloseBtn) {
     console.log('Contact close button found, adding event listeners');
     
+    // Single click event for all devices - better mobile compatibility
     contactCloseBtn.addEventListener('click', (e) => {
       console.log('Contact close CLICK event triggered');
       e.preventDefault();
@@ -890,19 +893,11 @@ document.addEventListener('DOMContentLoaded', function() {
       closeContactSection();
     });
     
-    // Add touch event for mobile
+    // Mobile touch optimization - prevent default touch behavior
     contactCloseBtn.addEventListener('touchstart', (e) => {
-      console.log('Contact close TOUCHSTART event triggered');
-      e.preventDefault();
-      e.stopPropagation();
-      closeContactSection();
-    });
+      e.preventDefault(); // Prevent default touch behavior
+    }, { passive: false });
     
-    contactCloseBtn.addEventListener('touchend', (e) => {
-      console.log('Contact close TOUCHEND event triggered');
-      e.preventDefault();
-      e.stopPropagation();
-    });
   } else {
     console.error('Contact close button NOT found!');
   }
