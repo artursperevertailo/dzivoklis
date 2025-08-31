@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Contact section elements
   const contactLink = document.getElementById("contact-link");
-  const contactSection = document.getElementById("contact-section");
+  // Vecais contact section noņemts - izmantojam jauno modal
 
   // Lightbox elements
   const lightbox = document.getElementById("lightbox");
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navLogo: !!navLogo,
     navRight: !!navRight,
     contactLink: !!contactLink,
-    contactSection: !!contactSection,
+    // contactSection noņemts
     lightbox: !!lightbox,
     lightboxImage: !!lightboxImage,
     lightboxClose: !!lightboxClose,

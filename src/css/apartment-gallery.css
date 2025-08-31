@@ -2900,103 +2900,21 @@ p {
   }
 }
 
-/* Contact Section Styles */
-.contact-section {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  box-sizing: border-box;
-}
+/* Vecais contact section noņemts - izmantojam jauno modal */
 
-.contact-container {
-  background: var(--color-background);
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  position: relative;
-  border: 3px solid var(--color-accent);
-}
+/* Vecais contact-container noņemts */
 
-  .contact-close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: var(--color-accent);
-    border: 2px solid var(--color-accent);
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 10001;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-  }
+/* Vecais contact-close noņemts */
 
-  .contact-close:hover {
-    background: var(--color-accent);
-    color: white;
-    transform: scale(1.1);
-  }
+/* Vecais contact-title noņemts */
 
-  .contact-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--color-foreground);
-    margin-bottom: 2rem;
-    text-align: center;
-    border-bottom: 3px solid var(--color-accent);
-    padding-bottom: 1rem;
-  }
+/* Vecais contact-content noņemts */
 
-.contact-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+/* Vecais contact-info noņemts */
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+/* Vecais contact-item noņemts */
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: transparent;
-  border-radius: var(--border-radius);
-  border: 2px solid var(--color-accent);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-  background: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(197, 184, 165, 0.3);
-  border-color: var(--color-accent);
-}
-
-.contact-icon {
-  flex-shrink: 0;
+/* Vecais contact-icon noņemts */
 }
 
   .contact-details h4 {
