@@ -1,0 +1,6011 @@
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=IBM+Plex+Mono&display=swap");
+
+/* Variables for consistency */
+:root {
+  --color-background: #e6e0d8; /* Content background */
+  --color-body-bg: #1a1a1a; /* Dark body background for depth effect */
+  --color-foreground: #2a2826;
+  --color-accent: #c5b8a5;
+  --color-menu-bg: #ffffff; /* Solid white for menu background */
+  --color-menu-text: #2a2826; /* Match the top menu text color */
+  --font-primary: "Manrope", sans-serif;
+  --font-secondary: "IBM Plex Mono", monospace;
+  --margin: 32px;
+  --gutter: 16px;
+  --font-size-large: 64px;
+  --font-size-medium: 18px;
+  --font-size-small: 16px;
+  --nav-height: 60px;
+  --border-radius: 4px; /* Consistent border radius */
+  
+  /* Responsive breakpoints */
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --large-desktop: 1200px;
+}
+
+/* Base responsive typography - Consolidated */
+@media (max-width: 480px) {
+  :root {
+    --font-size-large: 32px;
+    --font-size-medium: 16px;
+    --font-size-small: 14px;
+    --margin: 16px;
+    --gutter: 12px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --font-size-large: 42px;
+    --font-size-medium: 17px;
+    --font-size-small: 15px;
+    --margin: 24px;
+    --gutter: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --font-size-large: 52px;
+    --font-size-medium: 18px;
+    --font-size-small: 16px;
+    --margin: 28px;
+    --gutter: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background); /* Same background as content */
+  color: var(--color-foreground);
+  letter-spacing: -0.03em;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  transition: padding 0.3s ease; /* Add transition for padding */
+  will-change: padding; /* Optimize for padding changes */
+}
+
+/* Background noise effect - removed for clean beige background */
+
+/* Noise animation removed for clean background */
+
+a {
+  color: var(--color-foreground);
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-size: var(--font-size-large);
+  margin: var(--gutter) 0;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: 0.15em;
+  word-spacing: 0.2em;
+}
+
+.highlight-text {
+  color: #E9692C;
+}
+
+.highlight-text-black {
+  color: #1a1a1a;
+}
+
+
+p {
+  font-size: var(--font-size-medium);
+  line-height: 1.4;
+  margin-top: 1rem;
+}
+
+/* Property details styling */
+.property-details {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+}
+
+.property-details-section {
+  margin-top: 60px;
+  padding: 40px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.property-details-section .property-details {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.property-details-item {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.property-details-item .property-details {
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.payments-item {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.payments-details {
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  background: linear-gradient(135deg, #E9692C 0%, #f17a3d 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  color: white;
+}
+
+.payments-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 25px 0;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.payment-item:last-child {
+  border-bottom: none;
+}
+
+.payment-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.payment-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.total-payment {
+  margin-top: 15px;
+  padding-top: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.total-payment .payment-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.total-payment .payment-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(42, 40, 38, 0.1);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-foreground);
+  opacity: 0.7;
+}
+
+.detail-value {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-foreground);
+}
+
+/* All content wrapper */
+.all-content {
+  background-color: var(--color-background);
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  transition: transform 0.3s ease, border-radius 0.3s ease; /* Add border-radius transition */
+  will-change: transform, border-radius;
+  border-radius: 0; /* Start with no border radius */
+  overflow: hidden; /* Ensure content respects the border radius */
+}
+
+/* Responsive Content */
+@media (max-width: 480px) {
+  .all-content {
+    padding: 0;
+  }
+  
+  .main-content {
+    padding: 20px 16px;
+  }
+  
+  .grid-content {
+    padding: 20px 16px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .all-content {
+    padding: 0;
+  }
+  
+  .main-content {
+    padding: 30px 24px;
+  }
+  
+  .grid-content {
+    padding: 30px 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    padding: 40px 32px;
+  }
+  
+  .grid-content {
+    padding: 40px 32px;
+  }
+}
+
+/* Add a class for when the menu is open to apply border radius */
+.all-content.menu-open {
+  border-radius: var(--border-radius);
+}
+
+/* Navigation */
+.navigation {
+  color: var(--color-foreground);
+  position: relative; /* Not fixed */
+  width: 100%;
+  z-index: 20; /* Higher than dropdown */
+  background-color: var(--color-background);
+  padding: var(--gutter) var(--margin);
+  height: var(--nav-height);
+  transition: margin 0.3s ease;
+}
+
+.navigation__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative; /* Ensure proper positioning context */
+}
+
+.navigation__logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-foreground);
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.navigation__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.navigation__menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  background: var(--color-menu-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navigation__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+
+/* Responsive Navigation - Consolidated */
+@media (max-width: 480px) {
+  .navigation {
+    padding: 12px 16px;
+    height: 60px;
+  }
+  
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .navigation__logo {
+    font-size: 18px;
+    flex: 0 0 auto;
+  }
+  
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 8px;
+    justify-content: center;
+  }
+  
+  .navigation__menu {
+    flex-direction: column;
+    gap: 8px;
+    padding: 6px 12px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .navigation__right {
+    display: none;
+  }
+  
+  .nav-link {
+    font-size: 10px;
+    margin-right: 8px;
+  }
+  
+  .menu-btn {
+    display: flex;
+    font-size: 18px;
+    padding: 4px 8px;
+    min-height: 28px;
+  }
+  
+  .menu-text {
+    font-size: 12px;
+    margin-right: 4px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation {
+    padding: 16px 20px;
+    height: 65px;
+  }
+  
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .navigation__logo {
+    font-size: 20px;
+    flex: 0 0 auto;
+  }
+  
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 12px;
+    justify-content: center;
+  }
+  
+  .navigation__menu {
+    flex-direction: row;
+    gap: 12px;
+    padding: 8px 16px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .navigation__right {
+    flex: 0 0 auto;
+    display: flex;
+  }
+  
+  .nav-link {
+    font-size: 11px;
+    margin-right: 10px;
+  }
+  
+  .menu-btn {
+    display: flex;
+    font-size: 20px;
+    padding: 6px 10px;
+    min-height: 32px;
+  }
+  
+  .menu-text {
+    font-size: 13px;
+    margin-right: 6px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navigation {
+    padding: 20px 24px;
+  }
+  
+  .navigation__logo {
+    font-size: 22px;
+  }
+}
+
+/* Responsive navigation container */
+@media (max-width: 480px) {
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
+/* Responsive navigation container */
+@media (max-width: 480px) {
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
+/* Responsive navigation container */
+@media (max-width: 480px) {
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
+.navigation__logo {
+  font-size: 24px;
+  flex: 1;
+  transition: transform 0.3s ease; /* Add transition for smooth movement */
+  will-change: transform;
+  transform: translateZ(0);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsive navigation logo */
+@media (max-width: 480px) {
+  .navigation__logo {
+    font-size: 16px;
+    gap: 6px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__logo {
+    font-size: 18px;
+    gap: 7px;
+    flex: 0 0 auto;
+  }
+}
+
+/* Responsive navigation logo */
+@media (max-width: 480px) {
+  .navigation__logo {
+    font-size: 16px;
+    gap: 6px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__logo {
+    font-size: 18px;
+    gap: 7px;
+    flex: 0 0 auto;
+  }
+}
+
+/* Responsive logo text */
+@media (max-width: 480px) {
+  .navigation__logo {
+    font-size: 16px;
+    gap: 6px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__logo {
+    font-size: 18px;
+    gap: 7px;
+  }
+}
+
+.logo-ornament {
+  display: flex;
+  align-items: center;
+}
+
+.logo-ornament svg {
+  transition: all 0.3s ease;
+}
+
+/* Responsive logo ornament */
+@media (max-width: 480px) {
+  .logo-ornament svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .logo-ornament svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.logo-ornament svg:hover {
+  transform: scale(1.1);
+}
+
+.navigation__center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive navigation center */
+@media (max-width: 480px) {
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 8px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 12px;
+    justify-content: center;
+  }
+}
+
+/* Responsive navigation center */
+@media (max-width: 480px) {
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 8px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 12px;
+    justify-content: center;
+  }
+}
+
+/* Responsive navigation center */
+@media (max-width: 480px) {
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 8px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 12px;
+    justify-content: center;
+  }
+}
+
+.navigation__right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  transition: transform 0.3s ease; /* Add transition for smooth movement */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Responsive navigation right */
+@media (max-width: 480px) {
+  .navigation__right {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__right {
+    display: none;
+  }
+}
+
+/* Responsive navigation right */
+@media (max-width: 480px) {
+  .navigation__right {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__right {
+    display: none;
+  }
+}
+
+/* Responsive navigation right */
+@media (max-width: 480px) {
+  .navigation__right {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__right {
+    display: none;
+  }
+}
+
+.navigation__menu {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-menu-bg); /* Solid white */
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  position: relative;
+  will-change: transform; /* Optimize for animations */
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Responsive navigation menu */
+@media (max-width: 480px) {
+  .navigation__menu {
+    padding: 6px 12px;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 200px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 10px;
+    margin-right: 0;
+    margin-bottom: 4px;
+    text-align: center;
+    padding: 4px 8px;
+  }
+  
+  .nav-link:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__menu {
+    padding: 8px 14px;
+    flex-direction: row;
+    gap: 10px;
+    min-width: 250px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 11px;
+    margin-right: 8px;
+    padding: 4px 8px;
+  }
+}
+
+/* Responsive navigation menu */
+@media (max-width: 480px) {
+  .navigation__menu {
+    padding: 6px 12px;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 200px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 10px;
+    margin-right: 0;
+    margin-bottom: 4px;
+    text-align: center;
+    padding: 4px 8px;
+  }
+  
+  .nav-link:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__menu {
+    padding: 8px 14px;
+    flex-direction: row;
+    gap: 10px;
+    min-width: 250px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 11px;
+    margin-right: 8px;
+    padding: 4px 8px;
+  }
+}
+
+/* Responsive navigation menu */
+@media (max-width: 480px) {
+  .navigation__menu {
+    padding: 6px 12px;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 200px;
+  }
+  
+  .nav-link {
+    font-size: 10px;
+    margin-right: 0;
+    margin-bottom: 4px;
+    text-align: center;
+    padding: 4px 8px;
+  }
+  
+  .nav-link:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation__menu {
+    padding: 8px 14px;
+    flex-direction: row;
+    gap: 10px;
+    min-width: 250px;
+  }
+  
+  .nav-link {
+    font-size: 11px;
+    margin-right: 8px;
+    padding: 4px 8px;
+  }
+}
+
+.nav-link {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-right: 12px;
+  letter-spacing: 0.05em;
+  text-rendering: optimizeLegibility; /* Improve text rendering */
+  -webkit-font-smoothing: antialiased; /* Better font smoothing */
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Responsive nav links */
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 10px;
+    margin-right: 8px;
+    letter-spacing: 0.03em;
+    padding: 4px 6px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav-link {
+    font-size: 11px;
+    margin-right: 10px;
+    letter-spacing: 0.04em;
+    padding: 4px 8px;
+  }
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.contact-link {
+  font-family: var(--font-secondary); /* Same font as nav links */
+  font-size: 12px; /* Same size as nav links */
+  text-transform: uppercase; /* Same text transform as nav links */
+  letter-spacing: 0.05em; /* Same letter spacing as nav links */
+  text-rendering: optimizeLegibility; /* Improve text rendering */
+  -webkit-font-smoothing: antialiased; /* Better font smoothing */
+  -moz-osx-font-smoothing: grayscale;
+  color: #E9692C;
+  transition: color 0.3s ease;
+}
+
+/* Responsive contact link */
+@media (max-width: 480px) {
+  .contact-link {
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    padding: 4px 6px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .contact-link {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    padding: 4px 8px;
+  }
+}
+
+.contact-link:hover {
+  color: #f17a3d;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-foreground);
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-left: 8px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: auto;
+  min-height: 36px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  gap: 8px;
+  
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Responsive menu button */
+@media (max-width: 480px) {
+  .menu-btn {
+    font-size: 16px;
+    padding: 6px 10px;
+    min-height: 32px;
+    margin-left: 6px;
+    gap: 6px;
+  }
+  
+  .menu-text {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .menu-btn {
+    font-size: 17px;
+    padding: 7px 11px;
+    min-height: 34px;
+    margin-left: 7px;
+    gap: 7px;
+  }
+  
+  .menu-text {
+    font-size: 12px;
+  }
+}
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-btn .menu-text {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #E9692C;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Responsive menu text */
+@media (max-width: 480px) {
+  .menu-btn .menu-text {
+    font-size: 11px;
+    letter-spacing: 0.03em;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .menu-btn .menu-text {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+}
+
+.menu-btn:hover .menu-text {
+  color: #f17a3d;
+}
+
+
+
+/* Dropdown Menu - MODIFIED to fix text skewing */
+.dropdown {
+  background-color: var(--color-menu-bg);
+  color: var(--color-menu-text);
+  width: 40vw; /* 40% viewport width as requested */
+  position: absolute; /* Not fixed */
+  top: calc(
+    var(--nav-height) + 20px
+  ); /* Position below the navigation + account for padding */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally without scaling */
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  border-radius: var(--border-radius);
+  box-shadow: none; /* No shadow */
+  height: auto; /* Auto height based on content */
+  max-height: 0;
+  will-change: opacity, max-height;
+  overflow: hidden;
+}
+
+.dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  max-height: 50vh; /* Limit maximum height */
+  overflow: visible;
+}
+
+.dropdown__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 60px 40px 40px 40px;
+  border-radius: var(
+    --border-radius
+  ); /* Ensure content has rounded corners too */
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  transform: translateY(-100%); /* Start offscreen */
+  transition: transform 0.3s ease;
+  will-change: transform;
+  color: #333;
+  overflow-y: auto;
+  position: relative;
+}
+
+.dropdown.open .dropdown__content {
+  transform: translateY(0); /* Slide in when open */
+}
+
+.dropdown__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dropdown__header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dropdown__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 3px solid #E9692C;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.dropdown__subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.dropdown__payments {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dropdown__payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dropdown__payment-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown__payment-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.dropdown__payment-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+}
+
+.dropdown__payment-total .dropdown__payment-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.dropdown__payment-total .dropdown__payment-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.dropdown__section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.dropdown__section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Close button styles */
+.dropdown__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.dropdown__close:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.dropdown__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dropdown__info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown__info-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown__info-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  flex: 1;
+  margin-right: 15px;
+}
+
+.dropdown__info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  text-align: right;
+  min-width: 60px;
+}
+
+.additional-info-item {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.additional-info-details {
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  color: #333;
+}
+
+.additional-info-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 25px 0;
+  text-align: center;
+  color: #333;
+  letter-spacing: 0.05em;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+
+
+.dropdown__image {
+  margin-top: var(--margin);
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: var(
+    --border-radius
+  ); /* Ensure image container has rounded corners */
+  will-change: opacity, transform; /* Optimize for animations */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition for smoother animation */
+}
+
+.dropdown__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.dropdown__button {
+  font-family: var(--font-secondary);
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(10px); /* Initial blur state */
+  will-change: opacity, transform, filter;
+  position: relative;
+  display: inline-block;
+  width: fit-content; /* Make the element only as wide as its content */
+  font-weight: 500; /* Fatter weight */
+  color: var(--color-menu-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-rendering: optimizeLegibility; /* Improve text rendering */
+  -webkit-font-smoothing: antialiased; /* Better font smoothing */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dropdown__button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-menu-text);
+  transition: width 0.3s ease;
+}
+
+.dropdown__button:hover:after {
+  width: 100%;
+}
+
+/* Main Content */
+.content {
+  background-color: var(--color-background);
+  position: relative;
+  z-index: 5; /* Lower than dropdown */
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0; /* No top margin since nav is not fixed */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gutter);
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding: var(--margin);
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0 auto;
+  
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  
+  /* Responsive grid template */
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+    padding: 24px;
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    padding: 28px;
+  }
+}
+
+.grid-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+
+
+.grid-content {
+  padding: var(--margin);
+  width: 100%;
+  text-align: left;
+}
+
+.grid-item__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.grid-item img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* Grid Image Styles */
+.grid-image {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius);
+  
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.grid-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.show {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  opacity: 1;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 20vh;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.lightbox-nav.prev {
+  left: -60px;
+}
+
+.lightbox-nav.next {
+  right: -60px;
+}
+
+@media (max-width: 768px) {
+  .lightbox-nav.prev {
+    left: 15px;
+  }
+  
+  .lightbox-nav.next {
+    right: 15px;
+  }
+  
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+  
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  /* Mobile Lightbox Styles */
+  .lightbox.show {
+    padding-top: 0;
+    align-items: flex-start;
+  }
+  
+  .lightbox-content {
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: 0;
+    margin-top: 15vh;
+  }
+  
+  .lightbox-image {
+    max-height: 70vh;
+    margin: 0;
+    transform-origin: center center;
+    will-change: transform, opacity;
+  }
+  
+  .lightbox-nav.prev {
+    left: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .lightbox-nav.next {
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  
+  /* Grid container styles moved to main .grid-container rule */
+  
+  .grid-item {
+    min-height: 200px;
+  }
+  
+  .dropdown {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .dropdown__content {
+    padding: 40px 20px 30px 20px;
+  }
+  
+  .dropdown__title {
+    font-size: 1.4rem;
+  }
+  
+  .dropdown__story,
+  .dropdown__plan-item,
+  .dropdown__advantage-item,
+  .dropdown__location-text {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  
+  /* Mobile navigation adjustments */
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .navigation__logo {
+    flex: 0 0 auto;
+    font-size: 16px;
+  }
+  
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 8px;
+  }
+  
+  .navigation__menu {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Grid container styles moved to main .grid-container rule */
+  
+  .grid-item {
+    min-height: 220px;
+  }
+  
+  .dropdown {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .dropdown__content {
+    padding: 50px 30px 40px 30px;
+  }
+  
+  .dropdown__title {
+    font-size: 1.6rem;
+  }
+  
+  /* Tablet navigation adjustments */
+  .navigation__container {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .navigation__logo {
+    flex: 0 0 auto;
+  }
+  
+  .navigation__center {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 12px;
+  }
+  
+  .navigation__menu {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown {
+    width: 100%; /* Full width on mobile */
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .dropdown.open {
+    transform: translateX(0);
+  }
+
+  .dropdown__content {
+    transform: translateY(-100%);
+  }
+
+  .dropdown.open .dropdown__content {
+    transform: translateY(0);
+  }
+
+  .navigation__container {
+    justify-content: space-between;
+  }
+
+  .navigation__logo {
+    font-size: 20px;
+  }
+
+  .menu-btn {
+    display: flex;
+    font-size: 24px;
+  }
+}
+
+/* New dropdown description styles */
+.dropdown__description {
+  margin-bottom: 20px;
+}
+
+.dropdown__main-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.dropdown__story {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: 400;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropdown__story strong {
+  color: #1a1a1a;
+  font-weight: 700;
+  background: linear-gradient(120deg, #E9692C 0%, #f17a3d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 2px;
+}
+
+/* Plan styles */
+.dropdown__plan {
+  margin-bottom: 20px;
+}
+
+.dropdown__plan-item {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 15px;
+  padding: 12px 16px;
+  background: rgba(233, 105, 44, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #E9692C;
+  transition: all 0.3s ease;
+}
+
+.dropdown__plan-item:hover {
+  background: rgba(233, 105, 44, 0.1);
+  transform: translateX(5px);
+}
+
+.dropdown__plan-item:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown__plan-item strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* Advantages styles */
+.dropdown__advantages {
+  margin-bottom: 20px;
+}
+
+.dropdown__advantage-item {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 15px;
+  padding: 12px 16px;
+  background: rgba(233, 105, 44, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #E9692C;
+  transition: all 0.3s ease;
+}
+
+.dropdown__advantage-item:hover {
+  background: rgba(233, 105, 44, 0.1);
+  transform: translateX(5px);
+}
+
+.dropdown__advantage-item:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown__advantage-item strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* Location styles */
+.dropdown__location {
+  margin-bottom: 20px;
+}
+
+.dropdown__location-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  text-align: left;
+  background: rgba(233, 105, 44, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(233, 105, 44, 0.1);
+}
+
+.dropdown__location-text strong {
+  color: #1a1a1a;
+  font-weight: 700;
+  background: linear-gradient(120deg, #E9692C 0%, #f17a3d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 2px;
+}
+
+
+/* ------------------ Maksājumi Section Styles ------------------ */
+.dropdown__payments {
+  margin-top: 20px;
+}
+
+.password-protection {
+  text-align: center;
+  padding: 20px;
+  background: rgba(233, 105, 44, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(233, 105, 44, 0.1);
+}
+
+.password-text {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.password-input-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.password-input {
+  padding: 12px 16px;
+  border: 2px solid rgba(233, 105, 44, 0.3);
+  border-radius: 25px;
+  font-size: 1rem;
+  width: 200px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: #E9692C;
+  box-shadow: 0 0 0 3px rgba(233, 105, 44, 0.1);
+}
+
+.password-submit {
+  padding: 12px 24px;
+  background: #E9692C;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.password-submit:hover {
+  background: #d85a1f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(233, 105, 44, 0.3);
+}
+
+.password-error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.payments-content {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease;
+}
+
+.payments-info {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.payments-info h4 {
+  color: #E9692C;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.payment-item:last-child {
+  border-bottom: none;
+}
+
+.payment-item.total {
+  border-top: 2px solid #E9692C;
+  border-bottom: none;
+  padding-top: 20px;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.payment-label {
+  color: #333;
+  font-weight: 500;
+}
+
+.payment-amount {
+  color: #E9692C;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.bills-gallery {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bills-gallery h4 {
+  color: #E9692C;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.bills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Responsive Grid Layout */
+@media (max-width: 480px) {
+  .bills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .bill-item {
+    padding: 12px;
+  }
+  
+  .bill-image {
+    height: 100px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .bills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  
+  .bill-item {
+    padding: 14px;
+  }
+  
+  .bill-image {
+    height: 110px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.bill-item {
+  text-align: center;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #E9692C;
+}
+
+.bill-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bill-label {
+  display: block;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------ Bill Lightbox Styles ------------------ */
+.bill-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(10px);
+}
+
+.bill-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+}
+
+.bill-lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #E9692C;
+  cursor: pointer;
+  z-index: 10001;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.bill-lightbox-close:hover {
+  background: #E9692C;
+  color: white;
+  transform: scale(1.1);
+}
+
+.bill-lightbox-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive bill lightbox */
+@media (max-width: 768px) {
+  .bill-lightbox-content {
+    max-width: 95%;
+    max-height: 95%;
+  }
+  
+  .bill-lightbox-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* ------------------ Google Maps Styles ------------------ */
+.dropdown__map {
+  margin-top: 20px;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.map-container iframe {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.map-container iframe:hover {
+  transform: scale(1.02);
+}
+
+/* ------------------ Circle Pulse Animation for Dropdown Icon ------------------ */
+.menu-btn .circle-pulse {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.menu-btn .circle-pulse .circle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #E9692C;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.menu-btn .circle-pulse .ring {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #E9692C;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+}
+
+.menu-btn .circle-pulse .wave {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(233, 105, 44, 0.5);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.menu-btn .circle-pulse .particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.menu-btn .circle-pulse .particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #E9692C;
+  background-color: transparent;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.menu-btn:hover .circle-pulse .circle {
+  background-color: #f17a3d;
+}
+
+.menu-btn:hover .circle-pulse .ring {
+  border-color: #f17a3d;
+}
+
+.menu-btn:hover .circle-pulse .particle {
+  border-color: #f17a3d;
+}
+
+/* ------------------ Maksājumi Section Styles ------------------ */
+.maksajumi-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: var(--color-background);
+}
+
+/* Responsive Maksājumi Section */
+@media (max-width: 480px) {
+  .maksajumi-section {
+    padding: 30px 16px;
+  }
+  
+  .maksajumi-container {
+    padding: 20px;
+  }
+  
+  .maksajumi-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .maksajumi-password-input {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+  
+  .maksajumi-password-submit {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  .maksajumi-password-input-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .maksajumi-section {
+    padding: 40px 24px;
+  }
+  
+  .maksajumi-container {
+    padding: 30px;
+  }
+  
+  .maksajumi-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .maksajumi-password-input {
+    width: 220px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .maksajumi-section {
+    padding: 50px 32px;
+  }
+  
+  .maksajumi-container {
+    padding: 35px;
+  }
+}
+
+.maksajumi-container {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.maksajumi-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.maksajumi-password-protection {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.maksajumi-password-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.maksajumi-password-input-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.maksajumi-password-input {
+  padding: 15px 20px;
+  border: 2px solid rgba(233, 105, 44, 0.3);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  width: 250px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.maksajumi-password-input:focus {
+  outline: none;
+  border-color: #E9692C;
+  box-shadow: 0 0 0 3px rgba(233, 105, 44, 0.1);
+}
+
+.maksajumi-password-submit {
+  padding: 15px 30px;
+  background: #E9692C;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.maksajumi-password-submit:hover {
+  background: #d85a1f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 105, 44, 0.3);
+}
+
+.maksajumi-password-error {
+  color: #e74c3c;
+  font-size: 1rem;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.maksajumi-payments-content {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease;
+}
+
+.maksajumi-payments-info {
+  background: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.maksajumi-payments-info h4 {
+  color: #E9692C;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.maksajumi-payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.maksajumi-payment-item:last-child {
+  border-bottom: none;
+}
+
+.maksajumi-payment-item.total {
+  border-top: 2px solid #E9692C;
+  border-bottom: none;
+  padding-top: 25px;
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.maksajumi-payment-label {
+  color: #333;
+  font-weight: 500;
+}
+
+.maksajumi-payment-amount {
+  color: #E9692C;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.maksajumi-bills-gallery {
+  background: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.maksajumi-bills-gallery h4 {
+  color: #E9692C;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.maksajumi-bills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Maksājumi Bills Grid */
+@media (max-width: 480px) {
+  .maksajumi-bills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .maksajumi-bill-item {
+    padding: 15px;
+  }
+  
+  .maksajumi-bill-image {
+    height: 120px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .maksajumi-bills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  
+  .maksajumi-bill-item {
+    padding: 18px;
+  }
+  
+  .maksajumi-bill-image {
+    height: 130px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .maksajumi-bills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.maksajumi-bill-item {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.maksajumi-bill-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #E9692C;
+}
+
+.maksajumi-bill-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Bill labels removed - no longer needed */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .maksajumi-section {
+    padding: 40px 15px;
+  }
+  
+  .maksajumi-container {
+    padding: 25px;
+  }
+  
+  .maksajumi-title {
+    font-size: 2rem;
+  }
+  
+  .maksajumi-password-input-container {
+    flex-direction: column;
+  }
+  
+  .maksajumi-password-input {
+    width: 100%;
+  }
+  
+  .maksajumi-bills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------ Papildus Informācija Section Styles ------------------ */
+.papildus-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: var(--color-background);
+}
+
+.papildus-container {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.papildus-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.papildus-password-protection {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.papildus-password-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.papildus-password-input-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.papildus-password-input {
+  padding: 15px 20px;
+  border: 2px solid rgba(233, 105, 44, 0.3);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  width: 250px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.papildus-password-input:focus {
+  outline: none;
+  border-color: #E9692C;
+  box-shadow: 0 0 0 3px rgba(233, 105, 44, 0.1);
+}
+
+.papildus-password-submit {
+  padding: 15px 30px;
+  background: #E9692C;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.papildus-password-submit:hover {
+  background: #d85a1f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 105, 44, 0.3);
+}
+
+.papildus-password-error {
+  color: #e74c3c;
+  font-size: 1rem;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.papildus-content {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease;
+}
+
+.papildus-info-section {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.papildus-info-section:last-child {
+  margin-bottom: 0;
+}
+
+.papildus-info-section h4 {
+  color: #E9692C;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.papildus-info-section h5 {
+  color: #1a1a1a;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.papildus-description p,
+.papildus-location p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.papildus-description p:last-child,
+.papildus-location p:last-child {
+  margin-bottom: 0;
+}
+
+.papildus-plan-item,
+.papildus-advantage-item {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  padding-left: 10px;
+}
+
+.papildus-plan-item:last-child,
+.papildus-advantage-item:last-child {
+  margin-bottom: 0;
+}
+
+.papildus-plan-item strong,
+.papildus-advantage-item strong {
+  color: #E9692C;
+  font-weight: 600;
+}
+
+/* Responsive adjustments for Papildus section */
+@media (max-width: 768px) {
+  .papildus-section {
+    padding: 40px 15px;
+  }
+  
+  .papildus-container {
+    padding: 25px;
+  }
+  
+  .papildus-title {
+    font-size: 2rem;
+  }
+  
+  .papildus-password-input-container {
+    flex-direction: column;
+  }
+  
+  .papildus-password-input {
+    width: 100%;
+  }
+  
+  .papildus-info-section {
+    padding: 20px;
+  }
+  
+  .papildus-description p,
+  .papildus-location p,
+  .papildus-plan-item,
+  .papildus-advantage-item {
+    font-size: 1rem;
+  }
+}
+
+/* ------------------ PDF Documents Section Styles ------------------ */
+.pdf-documents {
+  text-align: center;
+}
+
+.pdf-intro {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pdf-item {
+  background: white;
+  border: 2px solid rgba(233, 105, 44, 0.2);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.pdf-item:hover {
+  border-color: #E9692C;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(233, 105, 44, 0.15);
+}
+
+.pdf-icon {
+  flex-shrink: 0;
+}
+
+.pdf-info h5 {
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.pdf-info p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive adjustments for PDF section */
+@media (max-width: 480px) {
+  .pdf-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .pdf-item {
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .pdf-info h5 {
+    font-size: 1rem;
+  }
+  
+  .pdf-info p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .pdf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  
+  .pdf-item {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pdf-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pdf-item {
+    padding: 20px;
+  }
+}
+
+/* Vecais contact section noņemts - izmantojam jauno modal */
+
+/* Vecais contact-container noņemts */
+
+/* Vecais contact-close noņemts */
+
+/* Vecais contact-title noņemts */
+
+/* Vecais contact-content noņemts */
+
+/* Vecais contact-info noņemts */
+
+/* Vecais contact-item noņemts */
+
+/* Vecais contact-icon noņemts */
+
+
+/* Vecie contact section stili noņemti */
+
+/* Vecie contact section stili noņemti */
+
+/* Vecie contact section stili noņemti */
+
+/* Bill Lightbox Styles */
+.bill-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.bill-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.bill-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2001;
+  transition: all 0.3s ease;
+}
+
+.bill-lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.bill-lightbox-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* Price Grid Item Styles */
+
+/* Responsive Price Grid Item */
+@media (max-width: 480px) {
+  .price-wrapper {
+    padding: 20px 15px;
+  }
+  
+  .price-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .price-currency {
+    font-size: 1.2rem;
+  }
+  
+  .price-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .price-wrapper {
+    padding: 25px 20px;
+  }
+  
+  .price-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.9rem;
+  }
+  
+  .price-currency {
+    font-size: 1.3rem;
+  }
+  
+  .price-value {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .price-wrapper {
+    padding: 30px 25px;
+  }
+  
+  .price-title {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+  }
+  
+  .price-currency {
+    font-size: 1.4rem;
+  }
+  
+  .price-value {
+    font-size: 1.8rem;
+  }
+}
+.price-wrapper {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  /* Better positioning and spacing */
+  margin: 20px 0;
+  padding: 20px;
+  
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    margin: 15px 0;
+    padding: 15px;
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    margin: 18px 0;
+    padding: 18px;
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    margin: 20px 0;
+    padding: 20px;
+  }
+}
+
+.price-wrapper:hover {
+  transform: translateY(-3px);
+}
+
+.price-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.price-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #E9692C;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+}
+
+.price-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.price-currency {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #E9692C;
+}
+
+.price-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #E9692C;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile-specific fixes for navigation and layout */
+@media (max-width: 480px) {
+  /* Ensure dropdown doesn't overlap main content */
+  .dropdown {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+  
+  .dropdown__content {
+    padding: 15px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  
+  /* Make sure Sazināties is visible */
+  .navigation__right {
+    display: flex !important;
+    order: 4;
+    margin-top: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .contact-link {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  /* Adjust main content spacing */
+  .grid-content {
+    margin-top: 20px;
+  }
+  
+  .grid-content h1 {
+    margin-bottom: 15px;
+  }
+  
+  /* Ensure navigation doesn't block content */
+  .navigation__container {
+    position: relative;
+    z-index: 100;
+  }
+  
+  .dropdown {
+    position: relative;
+    z-index: 99;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .dropdown {
+    max-height: 70vh;
+    margin-bottom: 25px;
+  }
+  
+  .navigation__right {
+    display: flex !important;
+    order: 4;
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Vecie contact section stili noņemti */
+
+/* Fix main content visibility on mobile */
+@media (max-width: 480px) {
+  /* Ensure main content is below navigation */
+  .main-content {
+    margin-top: 120px; /* Space for navigation */
+    padding-top: 20px;
+  }
+  
+  .grid-content {
+    margin-top: 40px;
+    padding-top: 20px;
+  }
+  
+  /* Adjust navigation positioning */
+  .navigation__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-background);
+    z-index: 1000;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ensure dropdown doesn't block content */
+  .dropdown {
+    position: relative;
+    z-index: 999;
+    margin-bottom: 30px;
+  }
+  
+  /* Adjust body padding to account for fixed navigation */
+  body {
+    padding-top: 100px;
+  }
+  
+  /* Make sure all content sections are visible */
+  .all-content {
+    margin-top: 20px;
+  }
+  
+  /* Ensure proper spacing for grid items */
+  .grid-container {
+    margin-top: 30px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-content {
+    margin-top: 100px;
+    padding-top: 25px;
+  }
+  
+  .grid-content {
+    margin-top: 35px;
+    padding-top: 25px;
+  }
+  
+  .navigation__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-background);
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    padding-top: 120px;
+  }
+}
+
+/* Additional mobile navigation fixes */
+@media (max-width: 480px) {
+  /* Ensure navigation is always visible but doesn't block content */
+  .navigation {
+    background: var(--color-background);
+    border-bottom: 1px solid rgba(233, 105, 44, 0.2);
+  }
+  
+  /* Make sure dropdown content is properly spaced */
+  .dropdown__content {
+    margin-bottom: 20px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  
+  /* Ensure proper spacing for all sections */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 40px;
+    padding-top: 20px;
+  }
+  
+  /* Fix any potential overlap issues */
+  .grid-item {
+    margin-bottom: 20px;
+  }
+  
+  /* Price wrapper styles moved to main .price-wrapper rule */
+}
+
+/* Tablet navigation fixes */
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation {
+    background: var(--color-background);
+    border-bottom: 1px solid rgba(233, 105, 44, 0.2);
+  }
+  
+  .dropdown__content {
+    margin-bottom: 25px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 35px;
+    padding-top: 25px;
+  }
+}
+
+/* Complete mobile navigation fix */
+@media (max-width: 480px) {
+  /* Fix navigation positioning and prevent overlap */
+  .navigation__container {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    background: transparent;
+    z-index: auto;
+    padding: 10px;
+    box-shadow: none;
+    margin-bottom: 20px;
+  }
+  
+  /* Ensure main content is properly positioned */
+  .main-content {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+  
+  .grid-content {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+  
+  /* Remove body padding that was causing issues */
+  body {
+    padding-top: 0;
+  }
+  
+  /* Make dropdown functional and visible */
+  .dropdown {
+    position: relative;
+    z-index: 100;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown__content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    max-height: none;
+    overflow: visible;
+    padding: 15px;
+  }
+  
+  /* Ensure navigation elements are properly spaced */
+  .navigation__center {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--color-text);
+    display: block;
+    width: 100%;
+    text-align: center;
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  
+  /* Make sure Sazināties is visible */
+  .navigation__right {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .contact-link {
+    font-size: 14px;
+    padding: 10px 20px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(233, 105, 44, 0.3);
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  
+  /* Ensure proper spacing for all content */
+  .all-content {
+    margin-top: 0;
+  }
+  
+  /* Grid container spacing - moved to main rule */
+  
+  /* Fix any remaining overlap issues */
+  .grid-item {
+    margin-bottom: 15px;
+  }
+  
+  /* Price wrapper spacing - moved to main rule */
+}
+
+/* Additional mobile dropdown functionality */
+@media (max-width: 480px) {
+  /* Ensure dropdown button works properly */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid rgba(233, 105, 44, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-btn .menu-text {
+    font-size: 14px;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+  
+  /* Ensure dropdown content is properly styled */
+  .dropdown__title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .dropdown__story {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .dropdown__plan-item,
+  .dropdown__advantage-item,
+  .dropdown__location-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+  
+  /* Ensure all sections are properly spaced */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+  }
+}
+
+/* Tablet adjustments for dropdown */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Optimize grid spacing for tablet */
+  .grid-container {
+    gap: 14px; /* Optimized for tablet */
+    padding: 24px; /* Optimized for tablet */
+  }
+  
+  .dropdown {
+    margin-bottom: 25px;
+  }
+  
+  .dropdown__content {
+    padding: 20px;
+  }
+  
+  .navigation__center {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+  
+  /* Optimize grid item spacing for tablet */
+  .grid-item {
+    margin-bottom: 18px; /* Optimized for tablet */
+  }
+  
+  .price-wrapper {
+    margin-top: 18px; /* Optimized for tablet */
+    margin-bottom: 18px; /* Add bottom margin */
+  }
+}
+
+/* Fix dropdown positioning and navigation overlap on mobile */
+@media (max-width: 480px) {
+  /* Ensure navigation is at the very top and doesn't overlap content */
+  .navigation {
+    position: relative;
+    background: var(--color-background);
+    border-bottom: 1px solid rgba(233, 105, 44, 0.2);
+    margin-bottom: 0;
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+  }
+  
+  .navigation__container {
+    position: relative;
+    background: var(--color-background);
+    padding: 15px;
+    margin-bottom: 0;
+    z-index: 1000;
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+  }
+  
+  /* Position dropdown above images */
+  .dropdown {
+    position: relative;
+    z-index: 999;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    order: -1; /* Move dropdown to top */
+  }
+  
+  /* Ensure main content starts after navigation */
+  .main-content {
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .grid-content {
+    margin-top: 0;
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Remove any body padding */
+  body {
+    padding-top: 0;
+  }
+  
+  /* Ensure proper content flow */
+  .all-content {
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Make sure images are below dropdown */
+  .grid-container {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Ensure navigation elements are properly ordered */
+  .navigation__center {
+    order: 1;
+    margin-bottom: 20px;
+  }
+  
+  .dropdown {
+    order: 2;
+    margin-bottom: 30px;
+  }
+  
+  .grid-content {
+    order: 3;
+  }
+  
+  /* Fix any remaining spacing issues */
+  .grid-item {
+    margin-bottom: 15px; /* Reduced from 20px */
+  }
+  
+  .price-wrapper {
+    margin-top: 15px; /* Reduced from 20px */
+    margin-bottom: 15px; /* Add bottom margin for better separation */
+  }
+  
+  /* Ensure sections are properly spaced */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 30px; /* Reduced from 40px */
+    padding: 20px; /* Reduced from 25px */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Complete layout separation and order fix for mobile */
+@media (max-width: 480px) {
+  /* Force proper layout order and prevent overlap */
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--color-background);
+    border-bottom: 2px solid rgba(233, 105, 44, 0.3);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Ensure navigation elements are in correct order */
+  .navigation__logo {
+    order: 1;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .navigation__center {
+    order: 2;
+    margin-bottom: 25px;
+  }
+  
+  .navigation__right {
+    order: 3;
+    margin-bottom: 20px;
+  }
+  
+  /* Position dropdown immediately after navigation */
+  .dropdown {
+    order: 4;
+    margin-top: 0;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  /* Ensure main content is completely separate */
+  .main-content {
+    order: 5;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 2px solid rgba(233, 105, 44, 0.1);
+    padding-top: 30px;
+  }
+  
+  .grid-content {
+    order: 6;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Force proper spacing between all elements */
+  .all-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  /* Ensure images start after dropdown with proper spacing */
+  .grid-container {
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+  
+  /* Add visual separation between sections */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  /* Ensure proper text visibility */
+  .grid-content h1 {
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
+  
+  .grid-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+}
+
+/* Complete mobile layout restructure - new approach */
+@media (max-width: 480px) {
+  /* Fixed navigation at top */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-background);
+    border-bottom: 2px solid rgba(233, 105, 44, 0.3);
+    z-index: 10000;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Main content starts below fixed navigation */
+  .all-content {
+    margin-top: 200px; /* Space for fixed navigation */
+    padding-top: 20px;
+  }
+  
+  /* Ensure dropdown appears above everything */
+  .dropdown {
+    position: fixed;
+    top: 200px; /* Below fixed navigation */
+    left: 15px;
+    right: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(233, 105, 44, 0.2);
+    z-index: 9999;
+    max-height: 60vh;
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+  }
+  
+  /* Show dropdown when active */
+  .dropdown.active {
+    display: block;
+  }
+  
+  /* Main content starts below dropdown */
+  .main-content {
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .grid-content {
+    margin-top: 0;
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Ensure proper spacing */
+  .grid-container {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  
+  /* Navigation elements styling */
+  .navigation__logo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .navigation__center {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--color-text);
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(233, 105, 44, 0.2);
+  }
+  
+  .navigation__right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .contact-link {
+    font-size: 14px;
+    padding: 10px 20px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(233, 105, 44, 0.3);
+  }
+  
+  /* Sections styling */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 40px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+}
+
+/* Additional mobile dropdown functionality with new approach */
+@media (max-width: 480px) {
+  /* Ensure dropdown content is properly styled */
+  .dropdown__content {
+    padding: 20px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  
+  .dropdown__title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .dropdown__story {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .dropdown__plan-item,
+  .dropdown__advantage-item,
+  .dropdown__location-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+  
+  /* Ensure proper spacing when dropdown is open */
+  .all-content.dropdown-open {
+    margin-top: 300px; /* Additional space when dropdown is open */
+  }
+  
+  /* Smooth transitions */
+  .dropdown {
+    transition: all 0.3s ease;
+  }
+  
+  .all-content {
+    transition: margin-top 0.3s ease;
+  }
+  
+  /* Ensure menu button is properly styled */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid rgba(233, 105, 44, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .menu-btn .menu-text {
+    font-size: 14px;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+  
+  /* Ensure proper z-index hierarchy */
+  .navigation {
+    z-index: 10000;
+  }
+  
+  .dropdown {
+    z-index: 9999;
+  }
+  
+  .all-content {
+    z-index: 1;
+  }
+}
+
+/* Fix mobile layout: main text above images, detailed info below images */
+@media (max-width: 480px) {
+  /* Ensure main text is above images */
+  .grid-content {
+    order: 1;
+    margin-bottom: 20px;
+    padding: 20px 16px;
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+  }
+  
+  .grid-content h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    text-align: left;
+    line-height: 1.3;
+    letter-spacing: 0.1em;
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+  }
+  
+  .grid-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: left;
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+  }
+  
+  /* Images below main text */
+  .grid-container {
+    order: 2;
+    margin-bottom: 20px;
+    padding: 16px; /* Consistent padding */
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 12px; /* Optimized gap for mobile */
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+  }
+  
+  /* Detailed info section below images */
+  .info-section {
+    order: 3;
+    display: block !important;
+    margin-top: 20px; /* Better spacing from images */
+    padding: 20px; /* Reduced padding for mobile */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+    
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      margin-top: 20px;
+      padding: 20px;
+    }
+    
+    @media (min-width: 481px) and (max-width: 768px) {
+      margin-top: 25px;
+      padding: 22px;
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+      margin-top: 30px;
+      padding: 25px;
+    }
+  }
+  
+  .info-container {
+    text-align: left;
+  }
+  
+  .info-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #E9692C;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+  }
+  
+  .info-content {
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .info-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #000000;
+    font-weight: 600;
+  }
+  
+  .info-content h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #E9692C;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .info-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #000000;
+    font-weight: 600;
+  }
+  
+  /* Orange accents for mobile info section */
+  .info-content strong {
+    color: #E9692C;
+    font-weight: 700;
+  }
+  
+  .info-content h4:first-of-type {
+    color: #E9692C;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(233, 105, 44, 0.3);
+    padding-bottom: 8px;
+  }
+  
+  .info-content ul li strong {
+    color: #E9692C;
+    font-weight: 700;
+  }
+  
+  /* Ensure proper content flow */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Hide dropdown completely on mobile */
+  .dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Hide menu button on mobile */
+  .menu-btn {
+    display: none !important;
+  }
+  
+  /* Sections styling */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+}
+
+/* Tablet layout fixes */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Ensure main text is above images on tablets too */
+  .grid-content {
+    order: 1;
+    margin-top: 0;
+    padding-top: 25px;
+    margin-bottom: 35px;
+  }
+  
+  .grid-content h1 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  .grid-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Images below text */
+  .grid-container {
+    order: 2;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Hide dropdown on tablets too */
+  .dropdown {
+    display: none !important;
+  }
+  
+  /* Info section styling for tablets */
+  .info-section {
+    order: 3;
+    margin-top: 35px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  .info-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .info-content p {
+    font-size: 15px;
+    margin-bottom: 18px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
+  .info-content li {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+  
+  /* Navigation fixes for tablets */
+  .navigation {
+    position: relative;
+    background: var(--color-background);
+    border-bottom: 2px solid rgba(233, 105, 44, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .all-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Ensure proper spacing for all sections on tablets */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 35px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+}
+
+/* ========================================
+   CONSOLIDATED RESPONSIVE STYLES
+   ======================================== */
+
+/* Mobile First Approach - All mobile styles in one place */
+@media (max-width: 480px) {
+  /* Root variables for mobile */
+  :root {
+    --font-size-large: 32px;
+    --font-size-medium: 16px;
+    --font-size-small: 14px;
+    --margin: 16px;
+    --gutter: 12px;
+  }
+  
+  /* Base layout */
+  body {
+    padding-top: 0;
+    overflow-x: hidden;
+  }
+  
+  .all-content {
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Navigation - Fixed at top */
+  .navigation {
+    position: relative;
+    background: var(--color-background);
+    border-bottom: 2px solid rgba(233, 105, 44, 0.3);
+    z-index: 1000;
+    padding: 15px;
+    margin-bottom: 20px;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .navigation__container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .navigation__logo {
+    order: 1;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .logo-ornament svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .navigation__center {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .navigation__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 10px 16px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--color-text);
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(233, 105, 44, 0.2);
+    margin: 0;
+  }
+  
+  .navigation__right {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+  }
+  
+  .contact-link {
+    font-size: 14px;
+    padding: 10px 20px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(233, 105, 44, 0.3);
+  }
+  
+  /* Menu button */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid rgba(233, 105, 44, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    justify-content: center;
+    min-height: auto;
+  }
+  
+  .menu-btn .menu-text {
+    font-size: 14px;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+  
+  /* Main content layout */
+  .main-content {
+    order: 1;
+    margin-top: 0;
+    padding: 20px 16px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .grid-content {
+    order: 1;
+    margin-top: 0;
+    padding: 20px 16px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .grid-content h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    text-align: left;
+    line-height: 1.3;
+    letter-spacing: 0.1em;
+  }
+  
+  .grid-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Images below text */
+  .grid-container {
+    order: 2;
+    margin-top: 0;
+    padding: 20px 16px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .grid-item {
+    margin-bottom: 15px;
+    min-height: 200px;
+  }
+  
+  .price-wrapper {
+    margin-top: 15px;
+  }
+  
+  /* Hide dropdown on mobile */
+  .dropdown {
+    display: none !important;
+  }
+  
+  /* Sections styling */
+  .maksajumi-section,
+  .papildus-section,
+
+  
+  .maksajumi-container,
+  .papildus-container {
+    text-align: center;
+  }
+  
+  .maksajumi-title,
+  .papildus-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  /* Password inputs */
+  .maksajumi-password-input,
+  .papildus-password-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(233, 105, 44, 0.3);
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .maksajumi-password-submit,
+  .papildus-password-submit {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(233, 105, 44, 0.3);
+  }
+  
+  /* Bills grid */
+  .maksajumi-bills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 0;
+  }
+  
+  .maksajumi-bill-item {
+    padding: 10px;
+  }
+  
+  .maksajumi-bill-image {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* PDF grid */
+  .pdf-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 0;
+  }
+  
+  .pdf-item {
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .pdf-info h5 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .pdf-info p {
+    font-size: 14px;
+  }
+  
+
+  
+  /* Lightbox adjustments */
+  .lightbox {
+    padding: 20px;
+  }
+  
+  .lightbox__content {
+    max-width: 95vw;
+    max-height: 90vh;
+  }
+  
+  .lightbox__close {
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+  }
+  
+  .lightbox__nav {
+    font-size: 20px;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Root variables for tablets */
+  :root {
+    --font-size-large: 42px;
+    --font-size-medium: 17px;
+    --font-size-small: 15px;
+    --margin: 24px;
+    --gutter: 14px;
+  }
+  
+  /* Navigation adjustments */
+  .navigation {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .navigation__container {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .navigation__logo {
+    order: 1;
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+  
+  .navigation__center {
+    order: 2;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 0;
+    width: auto;
+  }
+  
+  .navigation__menu {
+    flex-direction: row;
+    gap: 15px;
+    width: auto;
+  }
+  
+  .nav-link {
+    font-size: 15px;
+    padding: 12px 18px;
+    width: auto;
+  }
+  
+  .navigation__right {
+    order: 3;
+    width: auto;
+    margin-top: 0;
+  }
+  
+  .contact-link {
+    font-size: 15px;
+    padding: 12px 24px;
+  }
+  
+  /* Menu button */
+  .menu-btn {
+    width: auto;
+    padding: 12px 20px;
+  }
+  
+  .menu-btn .menu-text {
+    font-size: 15px;
+  }
+  
+  /* Main content layout */
+  .main-content {
+    padding: 30px 24px;
+  }
+  
+  .grid-content {
+    padding: 30px 24px;
+    margin-bottom: 35px;
+  }
+  
+  .grid-content h1 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  
+  .grid-content p {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  
+  /* Images grid */
+  .grid-container {
+    padding: 30px 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .grid-item {
+    min-height: 220px;
+  }
+  
+  /* Sections */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 35px;
+    padding: 30px;
+  }
+  
+  .maksajumi-title,
+  .papildus-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  
+  /* Bills grid */
+  .maksajumi-bills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  /* PDF grid */
+  .pdf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  /* Root variables for desktop */
+  :root {
+    --font-size-large: 64px;
+    --font-size-medium: 18px;
+    --font-size-small: 16px;
+    --margin: 32px;
+    --gutter: 16px;
+  }
+  
+  /* Navigation */
+  .navigation {
+    padding: var(--gutter) var(--margin);
+    height: var(--nav-height);
+  }
+  
+  .navigation__container {
+    flex-direction: row;
+    gap: var(--gutter);
+    align-items: center;
+  }
+  
+  .navigation__logo {
+    order: 1;
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+  
+  .navigation__center {
+    order: 2;
+    flex-direction: row;
+    gap: var(--gutter);
+    margin-bottom: 0;
+    width: auto;
+  }
+  
+  .navigation__menu {
+    flex-direction: row;
+    gap: var(--gutter);
+    width: auto;
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-small);
+    padding: 12px 20px;
+    width: auto;
+  }
+  
+  .navigation__right {
+    order: 3;
+    width: auto;
+    margin-top: 0;
+  }
+  
+  .contact-link {
+    font-size: var(--font-size-small);
+    padding: 12px 24px;
+  }
+  
+  /* Menu button */
+  .menu-btn {
+    width: auto;
+    padding: 12px 20px;
+  }
+  
+  .menu-btn .menu-text {
+    font-size: var(--font-size-small);
+  }
+  
+  /* Main content */
+  .main-content {
+    padding: 40px var(--margin);
+  }
+  
+  .grid-content {
+    padding: 40px var(--margin);
+    margin-bottom: 40px;
+  }
+  
+  .grid-content h1 {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--gutter);
+  }
+  
+  .grid-content p {
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--gutter);
+  }
+  
+  /* Images grid */
+  .grid-container {
+    padding: 40px var(--margin);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+  }
+  
+  .grid-item {
+    min-height: 250px;
+  }
+  
+  /* Sections */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 40px;
+    padding: 40px;
+  }
+  
+  .maksajumi-title,
+  .papildus-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  /* Bills grid */
+  .maksajumi-bills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+  }
+  
+  /* PDF grid */
+  .pdf-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+  }
+}
+
+/* Fix mobile layout: ensure text is above images by restructuring content */
+@media (max-width: 480px) {
+  /* Separate text content from grid */
+  .grid-content {
+    order: unset;
+    margin-top: 0;
+    padding: 20px 16px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    /* Force text to be above grid */
+    display: block;
+    width: 100%;
+    background: var(--color-background);
+  }
+  
+  /* Ensure grid container only contains images */
+  .grid-container {
+    order: unset;
+    margin-top: 0;
+    padding: 20px 16px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+    /* Force grid to be below text */
+    display: grid;
+    width: 100%;
+  }
+  
+  /* Force content flow: text first, then images */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid-content {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+  }
+  
+  .grid-container {
+    flex: 0 0 auto;
+  }
+  
+  /* Ensure proper text styling */
+  .grid-content h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    text-align: left;
+    line-height: 1.3;
+    letter-spacing: 0.1em;
+  }
+  
+  .grid-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Grid items styling */
+  .grid-item {
+    margin-bottom: 15px;
+    min-height: 200px;
+  }
+  
+  .price-wrapper {
+    margin-top: 15px;
+  }
+  
+  /* Hide dropdown on mobile */
+  .dropdown {
+    display: none !important;
+  }
+  
+  /* Sections styling */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+}
+
+/* Tablet and desktop text layout fixes */
+@media (min-width: 481px) {
+  /* Ensure proper content flow on larger devices */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid-content {
+    flex: 0 0 auto;
+    margin-bottom: 30px;
+  }
+  
+  .grid-container {
+    flex: 0 0 auto;
+  }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid-content {
+    padding: 30px 24px;
+    margin-bottom: 35px;
+  }
+  
+  .grid-content h1 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  
+  .grid-content p {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .grid-container {
+    padding: 30px 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Desktop specific adjustments */
+@media (min-width: 769px) {
+  .grid-content {
+    padding: 40px var(--margin);
+    margin-bottom: 40px;
+  }
+  
+  .grid-content h1 {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--gutter);
+  }
+  
+  .grid-content p {
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--gutter);
+  }
+  
+  .grid-container {
+    padding: 40px var(--margin);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+  }
+}
+
+/* Fix dropdown visibility on mobile - remove display: none and ensure proper functionality */
+@media (max-width: 480px) {
+  /* Show dropdown on mobile instead of hiding it */
+  .dropdown {
+    display: block !important;
+    position: relative;
+    z-index: 100;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(233, 105, 44, 0.2);
+    max-height: none;
+    overflow: visible;
+  }
+  
+  /* Ensure dropdown content is visible */
+  .dropdown__content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    max-height: none;
+    overflow: visible;
+    padding: 20px;
+  }
+  
+  /* Style dropdown elements for mobile */
+  .dropdown__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .dropdown__story {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  .dropdown__plan-item,
+  .dropdown__advantage-item,
+  .dropdown__location-text {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Ensure dropdown is properly positioned */
+  .dropdown.open {
+    display: block !important;
+  }
+  
+  .dropdown:not(.open) {
+    display: none;
+  }
+  
+  /* Add smooth transitions */
+  .dropdown {
+    transition: all 0.3s ease;
+  }
+  
+  .dropdown__content {
+    transition: opacity 0.3s ease;
+  }
+}
+
+/* Additional dropdown functionality fixes for mobile */
+@media (max-width: 480px) {
+  /* Ensure dropdown can be toggled properly */
+  .dropdown {
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+  
+  /* When dropdown is open */
+  .dropdown.open {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* When dropdown is closed */
+  .dropdown:not(.open) {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* Ensure proper spacing when dropdown is open */
+  .all-content.menu-open .dropdown {
+    margin-bottom: 30px;
+  }
+  
+  /* Style the dropdown button properly */
+  .menu-btn {
+    background: white;
+    border: 1px solid rgba(233, 105, 44, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+  }
+  
+  .menu-btn:hover {
+    background: rgba(233, 105, 44, 0.1);
+  }
+  
+  /* Ensure dropdown content is properly styled */
+  .dropdown__content {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  /* Add visual feedback for dropdown state */
+  .dropdown.open {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    border-color: rgba(233, 105, 44, 0.4);
+  }
+  
+  /* Ensure proper z-index hierarchy */
+  .dropdown {
+    z-index: 1000;
+  }
+  
+  .dropdown__content {
+    z-index: 1001;
+  }
+}
+
+/* Fix dropdown positioning on mobile - ensure it appears above all content */
+@media (max-width: 480px) {
+  /* Override desktop dropdown positioning for mobile */
+  .dropdown {
+    position: fixed !important;
+    top: 120px !important; /* Below fixed navigation */
+    left: 15px !important;
+    right: 15px !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    z-index: 10000 !important; /* Above everything */
+    max-height: 60vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(233, 105, 44, 0.2);
+    /* Remove display: none to allow JavaScript control */
+    display: none; /* JavaScript will control this */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  /* When JavaScript adds .open class */
+  .dropdown.open {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Ensure dropdown content is properly positioned */
+  .dropdown__content {
+    transform: none !important;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    max-height: none;
+    overflow: visible;
+  }
+  
+  /* Jaunais Contact Modal */
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+}
+
+.contact-modal.show {
+  display: block;
+}
+
+.contact-modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--color-accent);
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 25px 20px 25px;
+  border-bottom: 2px solid var(--color-accent);
+  background: linear-gradient(135deg, #F8F6F2 0%, #F0EDE8 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.contact-modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.contact-modal-close {
+  background: var(--color-accent);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.contact-modal-close:hover {
+  background: #d4a574;
+  transform: scale(1.1);
+}
+
+.contact-modal-body {
+  padding: 25px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .contact-modal-content {
+    width: 95%;
+    max-width: 400px;
+    top: 15px;
+  }
+  
+  .contact-modal-header {
+    padding: 20px 20px 15px 20px;
+  }
+  
+  .contact-modal-title {
+    font-size: 24px;
+  }
+  
+  .contact-modal-body {
+    padding: 20px;
+  }
+  
+  .contact-modal-close {
+    width: 45px;
+    height: 45px;
+  }
+}
+  
+  /* Ensure proper spacing for content */
+  .all-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .main-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .grid-content {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+  
+  .grid-container {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+  
+  /* Add backdrop when dropdown is open */
+  .dropdown.open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    
+    /* Mobile touch optimization */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Ensure content is above backdrop */
+  .dropdown__content {
+    position: relative;
+    z-index: 10001;
+    background: white;
+  }
+}
+
+/* Mobile solution: hide dropdown, show info section below images */
+@media (max-width: 480px) {
+  /* Completely hide dropdown on mobile */
+  .dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Hide menu button on mobile since dropdown is not needed */
+  .menu-btn {
+    display: none !important;
+  }
+  
+  /* Optimize grid spacing for mobile */
+  .grid-container {
+    gap: 12px; /* Reduced from 16px for mobile */
+    padding: 16px; /* Reduced from 32px for mobile */
+  }
+  
+  /* Optimize grid item spacing */
+  .grid-item {
+    margin-bottom: 12px; /* Reduced spacing between items */
+  }
+  
+  /* Create new info section below images */
+  .info-section {
+    display: block !important;
+    margin-top: 20px; /* Reduced from 30px */
+    padding: 20px; /* Reduced from 25px */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+    order: 3; /* After images */
+  }
+  
+  .info-container {
+    text-align: left;
+  }
+  
+  .info-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+  }
+  
+  .info-content {
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .info-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .info-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+  
+  /* Orange accents for mobile info section */
+  .info-content strong {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
+  .info-content h4:first-of-type {
+    color: var(--color-accent);
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(233, 105, 44, 0.3);
+    padding-bottom: 8px;
+  }
+  
+  .info-content ul li strong {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
+  /* Ensure proper content flow: text -> images -> info section */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid-content {
+    order: 1;
+    margin-bottom: 20px;
+  }
+  
+  .grid-container {
+    order: 2;
+    margin-bottom: 20px;
+  }
+  
+  .info-section {
+    order: 3;
+  }
+  
+  /* Sections styling */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+}
+
+/* Tablet and desktop info section styling */
+@media (min-width: 481px) {
+  /* Show info section on larger devices */
+  .info-section {
+    display: block;
+    margin-top: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  .info-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 15px;
+  }
+  
+  .info-content p {
+    font-size: 16px;
+    margin-bottom: 18px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 25px;
+  }
+  
+  .info-content li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+  }
+}
+
+/* Desktop specific info section */
+@media (min-width: 769px) {
+  .info-section {
+    margin-top: 50px;
+    padding: 40px;
+  }
+  
+  .info-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+  
+  .info-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .info-content h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+  
+  .info-content li {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Additional mobile info section styling */
+@media (max-width: 480px) {
+  /* Ensure info section contains all dropdown content */
+  .info-section {
+    margin: 20px 16px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  /* Style the main title in info section */
+  .info-section .info-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+  }
+  
+  /* Style the main description */
+  .info-section .info-content > p:first-of-type {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Style section headings */
+  .info-section .info-content h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 25px;
+    text-align: left;
+  }
+  
+  /* Style lists */
+  .info-section .info-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .info-section .info-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+  
+  /* Style regular paragraphs */
+  .info-section .info-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    line-height: 1.6;
+    text-align: left;
+  }
+  
+  /* Ensure proper spacing between sections */
+  .info-section .info-content > * + * {
+    margin-top: 15px;
+  }
+  
+  /* Add visual separation between sections */
+  .info-section .info-content h4:not(:first-child) {
+    border-top: 1px solid rgba(233, 105, 44, 0.2);
+    padding-top: 20px;
+    margin-top: 25px;
+  }
+}
+
+/* Hide info section on desktop by default */
+.info-section {
+  display: none;
+}
+
+/* Show info section only on mobile devices */
+@media (max-width: 480px) {
+  .info-section {
+    display: block !important;
+    order: 3;
+    margin: 20px 16px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(233, 105, 44, 0.1);
+  }
+  
+  .info-container {
+    text-align: left;
+  }
+  
+  .info-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+  }
+  
+  .info-content {
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .info-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .info-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+  
+  /* Hide dropdown on mobile */
+  .dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Hide menu button on mobile */
+  .menu-btn {
+    display: none !important;
+  }
+  
+  /* Ensure proper content flow on mobile */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid-content {
+    order: 1;
+    margin-bottom: 20px;
+    padding: 20px 16px;
+  }
+  
+  .grid-container {
+    order: 2;
+    margin-bottom: 20px;
+    padding: 20px 16px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .info-section {
+    order: 3;
+  }
+}
+
+/* Desktop: show dropdown, hide info section */
+@media (min-width: 769px) {
+  .info-section {
+    display: none !important;
+  }
+  
+  .dropdown {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .menu-btn {
+    display: flex;
+  }
+}
+
+/* Tablet: hide info section, show dropdown */
+@media (min-width: 481px) and (max-width: 768px) {
+  .info-section {
+    display: none !important;
+  }
+  
+  .dropdown {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .menu-btn {
+    display: flex;
+  }
+}
+
+/* Fix mobile layout: ensure proper content flow and styling */
+@media (max-width: 480px) {
+  /* Ensure main text appears above images */
+  .grid-item.grid-content {
+    order: -1; /* Force to top */
+    grid-column: 1 / -1; /* Span full width */
+    margin-bottom: 20px;
+    padding: 20px 16px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .grid-item.grid-content h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    text-align: left;
+    line-height: 1.3;
+    letter-spacing: 0.1em;
+  }
+  
+  .grid-item.grid-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    text-align: left;
+  }
+  
+  /* Images grid */
+  .grid-container {
+    margin-bottom: 20px;
+    padding: 20px 16px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  /* Info section styling - same style as main text */
+  .info-section {
+    display: block !important;
+    order: 3;
+    margin: 20px 16px;
+    padding: 20px 16px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .info-container {
+    text-align: left;
+  }
+  
+  .info-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-accent);
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+  }
+  
+  .info-content {
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .info-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+  }
+  
+  .info-content h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .info-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-content li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+  
+  /* Hide dropdown on mobile */
+  .dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Hide menu button on mobile */
+  .menu-btn {
+    display: none !important;
+  }
+}
+
+/* Mobile Map Section */
+.mobile-map-section {
+  margin-top: 25px;
+}
+
+.mobile-map-section h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.mobile-map-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-map-container iframe {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Desktop and Tablet: Show dropdown, hide mobile info section */
+@media (min-width: 481px) {
+  .dropdown {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .menu-btn {
+    display: flex !important;
+  }
+  
+  .info-section {
+    display: none !important;
+  }
+}
+
+
+
+
+
+
+
+/* Mobile Info Section - Modern Design */
+@media (max-width: 768px) {
+  .info-section {
+    background: linear-gradient(135deg, #F8F6F2 0%, #F0EDE8 100%);
+    padding: 30px 20px;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(233, 105, 44, 0.1);
+  }
+
+  .info-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #2C2C2C;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 3px solid #E9692C;
+    padding-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .info-content {
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #FFE8D6;
+  }
+
+  .info-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #2C2C2C;
+    font-weight: 500;
+    line-height: 1.7;
+  }
+
+  .info-content h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #E9692C;
+    font-weight: 700;
+    margin-top: 25px;
+    border-left: 4px solid #E9692C;
+    padding-left: 15px;
+  }
+
+  .info-content li {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #2C2C2C;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .info-content strong {
+    color: #E9692C;
+    font-weight: 700;
+  }
+
+  .info-content h4:first-of-type {
+    color: #E9692C;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FFE8D6;
+    padding-bottom: 12px;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .info-content ul li strong {
+    color: #E9692C;
+    font-weight: 700;
+  }
+}
+
+
+
+/* ===== CONSOLIDATED MOBILE OPTIMIZATIONS ===== */
+/* All mobile-specific styles in one place for better organization */
+
+/* Mobile Grid Layout Optimizations */
+@media (max-width: 480px) {
+  /* Grid container optimizations */
+  .grid-container {
+    gap: 12px !important;
+    padding: 16px !important;
+    margin-top: 15px !important;
+  }
+  
+  /* Grid item spacing */
+  .grid-item {
+    margin-bottom: 12px !important;
+  }
+  
+  /* Price wrapper positioning */
+  .price-wrapper {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Info section spacing */
+  .info-section {
+    margin-top: 20px !important;
+    padding: 20px !important;
+  }
+  
+  /* Section spacing */
+  .maksajumi-section,
+  .papildus-section {
+    margin-top: 30px !important;
+    padding: 20px !important;
+  }
+  
+  /* Navigation optimizations */
+  .navigation__container {
+    padding: 15px !important;
+  }
+  
+  /* Hide dropdown and menu button on mobile */
+  .dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  .menu-btn {
+    display: none !important;
+  }
+  
+  /* Mobile touch optimizations */
+  .grid-image,
+  .nav-link,
+  .menu-btn,
+  .price-wrapper,
+  .info-section {
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  /* Mobile layout improvements */
+  .grid-content h1 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .grid-content p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* Tablet Layout Optimizations */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Grid container optimizations */
+  .grid-container {
+    gap: 14px !important;
+    padding: 24px !important;
+  }
+  
+  /* Grid item spacing */
+  .grid-item {
+    margin-bottom: 18px !important;
+  }
+  
+  /* Price wrapper positioning */
+  .price-wrapper {
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+  }
+  
+  /* Dropdown optimizations */
+  .dropdown {
+    margin-bottom: 25px !important;
+  }
+  
+  .dropdown__content {
+    padding: 20px !important;
+  }
+  
+  /* Tablet touch optimizations */
+  .grid-image,
+  .nav-link,
+  .menu-btn,
+  .price-wrapper,
+  .info-section {
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  /* Tablet layout improvements */
+  .grid-content h1 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 18px !important;
+  }
+  
+  .grid-content p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 22px !important;
+  }
+}
+
