@@ -112,6 +112,21 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       dropdown.classList.add("open");
       allContent.classList.add("menu-open");
+      // Reflect active state for CSS-driven animations and accessibility
+      menuBtn.classList.add('is-active');
+      menuBtn.setAttribute('aria-expanded', 'true');
+
+      // Animate dropdown background and content (like contact modal)
+      gsap.fromTo(dropdown, 
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3, ease: "power2.out" }
+      );
+      
+      // Animate dropdown content from top (like contact modal)
+      gsap.fromTo(dropdown.querySelector('.dropdown__content'), 
+        { opacity: 0, y: -50, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out" }
+      );
 
       // Update text to "AIZVĒRT"
       const menuText = menuBtn.querySelector('.menu-text');
@@ -182,29 +197,8 @@ document.addEventListener('DOMContentLoaded', function() {
         ease: "easeOutFast"
       });
 
-      // Animate navigation elements
-      gsap.to([navLogo, navRight], {
-        x: -100,
-        duration: 0.6,
-        ease: "easeOutFast"
-      });
-
-      // Animate dropdown expansion
-      gsap.to(dropdown, {
-        width: "100%",
-        height: "100vh",
-        duration: 0.6,
-        ease: "easeOutFast"
-      });
-
-      // Animate dropdown content
-      gsap.to(dropdownContent, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        delay: 0.2,
-        ease: "easeOutFast"
-      });
+      // Animate dropdown expansion (removed old GSAP animations)
+      // Dropdown now uses CSS-based animations for better performance
       
       console.log('Menu opened successfully');
     } catch (error) {
@@ -215,35 +209,30 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeMenu() {
     console.log('Closing menu...');
     try {
-      // Animate body padding back
-      gsap.to("body", {
-        paddingRight: 0,
-        duration: 0.6,
-        ease: "easeInFast"
-      });
-
-      // Animate navigation elements back
-      gsap.to([navLogo, navRight], {
-        x: 0,
-        duration: 0.6,
-        ease: "easeInFast"
-      });
-
-      // Animate dropdown collapse
-      gsap.to(dropdown, {
-        width: "0%",
-        height: "0vh",
-        duration: 0.6,
-        ease: "easeInFast"
-      });
-
-      // Animate dropdown content
-      gsap.to(dropdownContent, {
+      // Animate dropdown content out (like contact modal)
+      gsap.to(dropdown.querySelector('.dropdown__content'), {
         opacity: 0,
-        y: 20,
-        duration: 0.4,
-        ease: "easeInFast"
+        y: -50,
+        scale: 0.95,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => {
+          dropdown.classList.remove("open");
+          allContent.classList.remove("menu-open");
+          menuBtn.classList.remove('is-active');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
       });
+
+      // Animate background fade out
+      gsap.to(dropdown, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in"
+      });
+
+      // Reset navigation elements position (fix for stuck header)
+      gsap.set([navLogo, navRight], { x: 0 });
 
       // Update text back to "ATVĒRT"
       const menuText = menuBtn.querySelector('.menu-text');
@@ -292,11 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
         duration: 0.4
       });
 
-      // Remove classes after animation
-      setTimeout(() => {
-        dropdown.classList.remove("open");
-        allContent.classList.remove("menu-open");
-      }, 600);
+
       
       console.log('Menu closed successfully');
     } catch (error) {
