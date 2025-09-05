@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentImageIndex = 0;
 
   // Lightbox image data
-  const lightboxImageData = [
+  let lightboxImageData = [
     {
       src: './images/ēka.PNG',
       alt: 'Ēka'
@@ -331,6 +331,21 @@ document.addEventListener('DOMContentLoaded', function() {
         ease: "easeInFast",
         onComplete: () => {
           lightbox.classList.remove('show');
+          // Atjaunojam lightbox datu masīvu atpakaļ uz oriģinālo
+          lightboxImageData = [
+            { src: './images/ēka.PNG', alt: 'Ēka' },
+            { src: './images/ēka2.PNG', alt: 'Ēka divi' },
+            { src: './images/virtuve3.PNG', alt: 'Virtuve trīs' },
+            { src: './images/virtuve.PNG', alt: 'Virtuve' },
+            { src: './images/virtuve2.PNG', alt: 'Virtuve divi' },
+            { src: './images/guļamistaba.PNG', alt: 'Guļamistaba' },
+            { src: './images/guļamistaba2.PNG', alt: 'Guļamistaba divi' },
+            { src: './images/viesistaba.PNG', alt: 'Viesistaba' },
+            { src: './images/koridors.PNG', alt: 'Koridors' },
+            { src: './images/koridors2.PNG', alt: 'Koridors divi' },
+            { src: './images/tualete.PNG', alt: 'Tualete' },
+            { src: './images/plānojums.jpg', alt: 'Plānojums' }
+          ];
         }
       });
       
@@ -568,6 +583,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
+  // Pirms remonta attēlu dati
+  const beforeRenovationImages = [
+    {
+      src: './images/before-renovation/P3130085.jpg',
+      alt: 'Dzīvoklis pirms remonta 1'
+    },
+    {
+      src: './images/before-renovation/P3130086.jpg',
+      alt: 'Dzīvoklis pirms remonta 2'
+    },
+    {
+      src: './images/before-renovation/P3130087.jpg',
+      alt: 'Dzīvoklis pirms remonta 3'
+    },
+    {
+      src: './images/before-renovation/P3130088.jpg',
+      alt: 'Dzīvoklis pirms remonta 4'
+    },
+    {
+      src: './images/before-renovation/P3130089.jpg',
+      alt: 'Dzīvoklis pirms remonta 5'
+    },
+    {
+      src: './images/before-renovation/P3130090.jpg',
+      alt: 'Dzīvoklis pirms remonta 6'
+    },
+    {
+      src: './images/before-renovation/P3130091.jpg',
+      alt: 'Dzīvoklis pirms remonta 7'
+    },
+    {
+      src: './images/before-renovation/P3130092.jpg',
+      alt: 'Dzīvoklis pirms remonta 8'
+    },
+    {
+      src: './images/before-renovation/P3130094.jpg',
+      alt: 'Dzīvoklis pirms remonta 9'
+    },
+    {
+      src: './images/before-renovation/P3130095.jpg',
+      alt: 'Dzīvoklis pirms remonta 10'
+    }
+  ];
+
   // PDF item click handlers - open PDFs directly
   document.addEventListener('click', (e) => {
     if (e.target.closest('.pdf-item')) {
@@ -581,6 +640,46 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  // Pirms remonta attēlu click handlers
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.before-renovation-image')) {
+      const img = e.target.closest('.before-renovation-image');
+      const index = parseInt(img.dataset.index);
+      openBeforeRenovationLightbox(index);
+    }
+  });
+
+  function openBeforeRenovationLightbox(index) {
+    console.log('Opening before renovation lightbox for image:', index);
+    try {
+      // Iestatām pirms remonta attēlus
+      lightboxImageData = beforeRenovationImages;
+      currentImageIndex = index;
+      updateLightbox();
+      
+      // Saglabājam pašreizējo scroll pozīciju
+      const currentScrollY = window.scrollY;
+      
+      // Iestatām lightbox pozīciju tieši tur, kur lietotājs atrodas
+      lightbox.style.top = currentScrollY + 'px';
+      
+      // Atveram lightbox
+      gsap.set(lightbox, { opacity: 0 });
+      lightbox.classList.add('show');
+      
+      // Lightbox atveras tieši tur, kur lietotājs atrodas
+      gsap.to(lightbox, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "easeOutFast"
+      });
+      
+      console.log('Before renovation lightbox opened successfully');
+    } catch (error) {
+      console.error('Error opening before renovation lightbox:', error);
+    }
+  }
 
   // Navigation link click handlers
   document.querySelectorAll('.nav-link').forEach(link => {
